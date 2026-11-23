@@ -1,0 +1,152 @@
+[
+ {
+  "name": "Svijanský Máz",
+  "price": 13.9,
+  "old_price": 22.9,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": "světlý ležák; ▼ nejnižší cena za posledních 30 dní 15,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Gambrinus Original 10 světlé výčepní pivo",
+  "price": 12.9,
+  "old_price": 16.9,
+  "volume": "0,5 l",
+  "price_per_l": 25.8,
+  "note": "záloha na láhev 3 Kč; ▾ nejnižší cena za posledních 30 dní",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Cool 0,0 Grep",
+  "price": 13.9,
+  "old_price": 23.9,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": "ochucené nealkoholické pivo",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Proud světlý ležák",
+  "price": 18.9,
+  "old_price": 23.9,
+  "volume": "0,33 l",
+  "price_per_l": 57.3,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Frisco Cocktails Mimosa",
+  "price": 18.9,
+  "old_price": 27.9,
+  "volume": "330 ml",
+  "price_per_l": 57.3,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Mustang Hořký 12",
+  "price": 15.9,
+  "old_price": 26.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Velkopopovický Kozel 10 6pack",
+  "price": 99.9,
+  "old_price": 147.0,
+  "volume": "6× 0,5 l",
+  "price_per_l": 33.3,
+  "note": "1 ks za 16,65 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Radegast Ratar",
+  "price": 21.9,
+  "old_price": 29.9,
+  "volume": "0,5 l",
+  "price_per_l": 43.8,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Starobrno Medium",
+  "price": 15.9,
+  "old_price": 23.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Zlatý Bažant",
+  "price": 11.9,
+  "old_price": 23.9,
+  "volume": "0,5 l",
+  "price_per_l": 23.8,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Lobkowicz Premium",
+  "price": 11.9,
+  "old_price": 21.9,
+  "volume": "0,5 l",
+  "price_per_l": 23.8,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Krušovice Ležák",
+  "price": 43.9,
+  "old_price": 58.9,
+  "volume": "1,5 l",
+  "price_per_l": 29.27,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Braník",
+  "price": 39.9,
+  "old_price": 49.9,
+  "volume": "2 l",
+  "price_per_l": 19.95,
+  "note": "světlé výčepní pivo",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Staropramen 10",
+  "price": 9.9,
+  "old_price": 16.9,
+  "volume": "0,5 l",
+  "price_per_l": 19.8,
+  "note": "světlé výčepní pivo",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Gambrinus Original 10 světlé výčepní pivo",
+  "price": 12.9,
+  "old_price": 16.9,
+  "volume": "0,5 l",
+  "price_per_l": 25.8,
+  "note": "záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ }
+]

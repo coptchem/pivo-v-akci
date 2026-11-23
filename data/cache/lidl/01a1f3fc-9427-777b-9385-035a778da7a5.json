@@ -1,0 +1,72 @@
+[
+ {
+  "name": "RADEGAST Ryze hořká 12",
+  "price": 174.9,
+  "old_price": null,
+  "volume": "8 x 500 ml",
+  "price_per_l": 43.73,
+  "note": "1 ks = 21,86 Kč; Ušetřete 26%",
+  "valid_from": "2026-11-23",
+  "valid_to": "2026-11-25"
+ },
+ {
+  "name": "ARGUS 12 Dark",
+  "price": 11.9,
+  "old_price": 16.9,
+  "volume": "0,5 l",
+  "price_per_l": 23.8,
+  "note": "tmavý ležák, záloha na lahev 3 Kč",
+  "valid_from": "2026-11-23",
+  "valid_to": "2026-11-25"
+ },
+ {
+  "name": "Pilsner Urquell 1 l, dárkové balení",
+  "price": 229.9,
+  "old_price": null,
+  "volume": "1 l",
+  "price_per_l": null,
+  "note": "dárkové balení",
+  "valid_from": "2026-11-23",
+  "valid_to": "2026-11-25"
+ },
+ {
+  "name": "Krušovice 12 světlý ležák",
+  "price": 129.9,
+  "old_price": null,
+  "volume": "8 x 0,5 l",
+  "price_per_l": 32.48,
+  "note": "cena za kus 16,24 Kč",
+  "valid_from": "2026-11-23",
+  "valid_to": "2026-11-25"
+ },
+ {
+  "name": "Braník světlý ležák",
+  "price": 44.9,
+  "old_price": null,
+  "volume": "2 l",
+  "price_per_l": 22.45,
+  "note": null,
+  "valid_from": "2026-11-23",
+  "valid_to": "2026-11-25"
+ },
+ {
+  "name": "Radegast 10 světlé výčepní pivo retro edice",
+  "price": 13.9,
+  "old_price": null,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": "záloha na lahev 3 Kč, ušetříte 36 %",
+  "valid_from": "2026-11-23",
+  "valid_to": "2026-11-25"
+ },
+ {
+  "name": "Pilsner Urquell",
+  "price": 229.9,
+  "old_price": null,
+  "volume": "1 l",
+  "price_per_l": null,
+  "note": "dárkové balení, limitovaná edice",
+  "valid_from": "2026-11-23",
+  "valid_to": "2026-11-25"
+ }
+]

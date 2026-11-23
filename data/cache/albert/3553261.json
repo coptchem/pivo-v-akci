@@ -1,0 +1,182 @@
+[
+ {
+  "name": "Svijanský Máz",
+  "price": 13.9,
+  "old_price": 22.9,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Gambrinus Original 10",
+  "price": 12.9,
+  "old_price": 16.9,
+  "volume": "0,5 l",
+  "price_per_l": 25.8,
+  "note": "záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Radegast Ryze hořká 12",
+  "price": 19.9,
+  "old_price": 25.9,
+  "volume": "0,5 l",
+  "price_per_l": 39.8,
+  "note": "záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Gambrinus Original 10 6pack",
+  "price": 89.9,
+  "old_price": 134.9,
+  "volume": "6× 0,5 l",
+  "price_per_l": 29.97,
+  "note": "1 ks za 14,99 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Gambrinus Patron 12",
+  "price": 16.9,
+  "old_price": 26.9,
+  "volume": "0,5 l",
+  "price_per_l": 33.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Cool 0,0 Grep",
+  "price": 13.9,
+  "old_price": 23.9,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": "ochucené nealkoholické pivo, vybrané druhy",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Birell 4pack Pomelo & Grep",
+  "price": 54.9,
+  "old_price": 69.9,
+  "volume": "4× 0,33 l",
+  "price_per_l": 41.6,
+  "note": "ochucené nealkoholické pivo, vybrané druhy",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Birell Světlý",
+  "price": 13.9,
+  "old_price": 20.9,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": "nealkoholické pivo, záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Staropramen 10 6pack",
+  "price": 79.9,
+  "old_price": 129.9,
+  "volume": "6× 0,5 l",
+  "price_per_l": 26.64,
+  "note": "1 ks za 13,32 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Proud světlý ležák",
+  "price": 18.9,
+  "old_price": 23.9,
+  "volume": "0,33 l",
+  "price_per_l": 57.3,
+  "note": "záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Frisco",
+  "price": 18.9,
+  "old_price": 25.9,
+  "volume": "330 ml",
+  "price_per_l": 57.3,
+  "note": "vybrané druhy, záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Krušovice 11",
+  "price": 15.9,
+  "old_price": 23.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Braník 10 Světlý",
+  "price": 14.9,
+  "old_price": 19.9,
+  "volume": "0,5 l",
+  "price_per_l": 29.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Mustang Hořký 12",
+  "price": 14.9,
+  "old_price": 21.9,
+  "volume": "0,5 l",
+  "price_per_l": 29.8,
+  "note": "záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Cecilia 11 bezlepkový ležák",
+  "price": 18.9,
+  "old_price": 25.9,
+  "volume": "0,5 l",
+  "price_per_l": 37.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Zlatopramen 11",
+  "price": 34.9,
+  "old_price": 54.9,
+  "volume": "1,5 l",
+  "price_per_l": 23.27,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Braník 11 Světlý ležák",
+  "price": 44.9,
+  "old_price": 69.9,
+  "volume": "2 l",
+  "price_per_l": 22.45,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Pilsner Urquell 10pack",
+  "price": 259,
+  "old_price": null,
+  "volume": "10× 0,5 l",
+  "price_per_l": 51.8,
+  "note": "1 ks za 25,90 Kč, záloha na láhev 3 Kč, soutěž s výhrou",
+  "valid_from": "2026-11-18",
+  "valid_to": "2026-12-01"
+ }
+]

@@ -1,0 +1,152 @@
+[
+ {
+  "name": "Pilsner Urquell světlý ležák 0,5 l",
+  "price": 25.9,
+  "old_price": 31.9,
+  "volume": "0,5 l",
+  "price_per_l": 51.8,
+  "note": "záloha na láhev 3 Kč; ▼ nejnižší cena za posledních 30 dní 25,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Velkopopovický Kozel 12 světlý ležák 0,5 l",
+  "price": 16.9,
+  "old_price": 27.9,
+  "volume": "0,5 l",
+  "price_per_l": 33.8,
+  "note": "světlý ležák; ▼ nejnižší cena za posledních 30 dní; platí pouze PÁ–NE",
+  "valid_from": "2026-11-20",
+  "valid_to": "2026-11-22"
+ },
+ {
+  "name": "Velkopopovický Kozel 11",
+  "price": 15.9,
+  "old_price": 19.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Velkopopovický Kozel Nealko",
+  "price": 17.9,
+  "old_price": 22.9,
+  "volume": "0,5 l",
+  "price_per_l": 35.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Excelent 11",
+  "price": 11.9,
+  "old_price": 19.9,
+  "volume": "0,5 l",
+  "price_per_l": 23.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Braník světlé výčepní pivo",
+  "price": 9.9,
+  "old_price": 14.9,
+  "volume": "0,5 l",
+  "price_per_l": 19.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Starobrno Štatl 12",
+  "price": 17.9,
+  "old_price": 24.9,
+  "volume": "0,5 l",
+  "price_per_l": 35.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Budvar Výčepní",
+  "price": 9.9,
+  "old_price": 17.9,
+  "volume": "0,5 l",
+  "price_per_l": 19.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Gambrinus Patron 12",
+  "price": 13.9,
+  "old_price": 21.9,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Velkopopovický Kozel 0,0 citrón",
+  "price": 16.9,
+  "old_price": 22.9,
+  "volume": "0,5 l",
+  "price_per_l": 33.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Radegast Ratar",
+  "price": 17.9,
+  "old_price": 25.9,
+  "volume": "0,5 l",
+  "price_per_l": 35.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Zlatopramen",
+  "price": 39.9,
+  "old_price": null,
+  "volume": "2 l",
+  "price_per_l": 19.95,
+  "note": "super cena",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Staropramen 12",
+  "price": 15.9,
+  "old_price": 25.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Pilsner Urquell světlý ležák",
+  "price": 25.9,
+  "old_price": 31.9,
+  "volume": "0,5 l",
+  "price_per_l": 51.8,
+  "note": "záloha na láhev 3 Kč; vybrané druhy; ▼ nejnižší cena za posledních 30 dní 25,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Velkopopovický Kozel 12 světlý ležák",
+  "price": 16.9,
+  "old_price": 27.9,
+  "volume": "0,5 l",
+  "price_per_l": 33.8,
+  "note": null,
+  "valid_from": null,
+  "valid_to": null
+ }
+]

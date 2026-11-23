@@ -1,0 +1,122 @@
+[
+ {
+  "name": "Radegast Ryze Hořká 12",
+  "price": 19.9,
+  "old_price": null,
+  "volume": "0,5 l",
+  "price_per_l": 39.8,
+  "note": "Záloha na láhev 3 Kč. Sklo, světlý ležák.",
+  "valid_from": "2026-11-25",
+  "valid_to": "2026-12-01"
+ },
+ {
+  "name": "Staropramen Cool 0,0 Grep",
+  "price": 15.9,
+  "old_price": 23.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": "s Clubcard; běžná cena 23,90 Kč",
+  "valid_from": "2026-11-25",
+  "valid_to": "2026-12-08"
+ },
+ {
+  "name": "Velkopopovický Kozel 12",
+  "price": 20.9,
+  "old_price": 29.9,
+  "volume": "0,5 l",
+  "price_per_l": 41.8,
+  "note": "Clubcard cena; plech, ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Velkopopovický Kozel 10",
+  "price": 12.9,
+  "old_price": null,
+  "volume": "0,5 l",
+  "price_per_l": 25.8,
+  "note": "Super cena; světlé výčepní; záloha na láhev 3 Kč",
+  "valid_from": "2026-11-25",
+  "valid_to": "2026-12-01"
+ },
+ {
+  "name": "Staropramen 10",
+  "price": 11.9,
+  "old_price": 17.9,
+  "volume": "0,5 l",
+  "price_per_l": 23.8,
+  "note": "Clubcard cena; sklo; záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Krušovice 0,5 l plech, dva druhy",
+  "price": 14.9,
+  "old_price": 22.9,
+  "volume": "0,5 l",
+  "price_per_l": 27.8,
+  "note": "Clubcard cena; běžná cena 22,90 Kč; cena za 1 l s Clubcard 27,80 Kč",
+  "valid_from": "2026-11-18",
+  "valid_to": "2026-12-01"
+ },
+ {
+  "name": "Velkopopovický Kozel 10 0,5 l plech, světlé výčepní",
+  "price": 16.9,
+  "old_price": 24.9,
+  "volume": "0,5 l",
+  "price_per_l": 33.8,
+  "note": "Clubcard cena; běžná cena 24,90 Kč; cena za 1 l s Clubcard 33,80 Kč",
+  "valid_from": "2026-11-25",
+  "valid_to": "2026-12-08"
+ },
+ {
+  "name": "Radegast Rázná 10 0,5 l plech, světlé výčepní",
+  "price": 17.9,
+  "old_price": 25.9,
+  "volume": "0,5 l",
+  "price_per_l": 35.8,
+  "note": "Clubcard cena; běžná cena 25,90 Kč; cena za 1 l s Clubcard 35,80 Kč",
+  "valid_from": "2026-11-25",
+  "valid_to": "2026-12-08"
+ },
+ {
+  "name": "Staropramen 12",
+  "price": 16.9,
+  "old_price": 26.9,
+  "volume": "0,5 l",
+  "price_per_l": 33.8,
+  "note": "Clubcard cena",
+  "valid_from": "2026-11-18",
+  "valid_to": "2026-12-01"
+ },
+ {
+  "name": "Gambrinus Originál 10",
+  "price": 12.9,
+  "old_price": 16.9,
+  "volume": "0,5 l",
+  "price_per_l": 25.8,
+  "note": "Clubcard cena",
+  "valid_from": "2026-11-18",
+  "valid_to": "2026-12-01"
+ },
+ {
+  "name": "Gambrinus Patron 12",
+  "price": 15.9,
+  "old_price": 22.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": "Clubcard cena",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Velkopopovický Kozel 11",
+  "price": 15.9,
+  "old_price": 19.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": null,
+  "valid_from": "2026-11-18",
+  "valid_to": "2026-12-01"
+ }
+]

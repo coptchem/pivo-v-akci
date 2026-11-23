@@ -1,0 +1,172 @@
+[
+ {
+  "name": "Birell Pomelo & Grep",
+  "price": 18.9,
+  "old_price": 24.9,
+  "volume": "0,5 l",
+  "price_per_l": 37.8,
+  "note": "nealkoholické pivo, vybrané druhy; nejnižší cena za posledních 30 dní 18,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Desperados Original",
+  "price": 23.9,
+  "old_price": 34.9,
+  "volume": "0,5 l",
+  "price_per_l": 47.8,
+  "note": "pivo silné, ochucené, světlé, pasterizované; nejnižší cena za posledních 30 dní 21,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Radegast Ryze hořká 12",
+  "price": 21.9,
+  "old_price": 29.9,
+  "volume": "0,5 l",
+  "price_per_l": 43.8,
+  "note": "světlý ležák; nejnižší cena za posledních 30 dní 21,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Krušovice 12 světlý ležák",
+  "price": 15.9,
+  "old_price": 24.9,
+  "volume": "0,5 l",
+  "price_per_l": 31.8,
+  "note": "světlý ležák; nejnižší cena za posledních 30 dní 15,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Radegast Rázná 10 6pack",
+  "price": 98.9,
+  "old_price": 153.0,
+  "volume": "6× 0,5 l",
+  "price_per_l": 32.97,
+  "note": "světlé výčepní pivo; 0,5 l = 16,49 Kč; nejnižší cena za posledních 30 dní 98,90 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Pilsner Urquell 10pack",
+  "price": 259,
+  "old_price": null,
+  "volume": "10× 0,5 l",
+  "price_per_l": 51.8,
+  "note": "světlý ležák; záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Pilsner Urquell 7pack + goblet",
+  "price": 259,
+  "old_price": null,
+  "volume": "7× 0,5 l",
+  "price_per_l": 74,
+  "note": "světlý ležák; záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Pilsner Urquell 8pack + krýgl",
+  "price": 269,
+  "old_price": null,
+  "volume": "8× 0,5 l",
+  "price_per_l": 67.25,
+  "note": "světlý ležák; záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Pilsner Urquell 7pack + šála",
+  "price": 379,
+  "old_price": null,
+  "volume": "7× 0,5 l",
+  "price_per_l": 108.29,
+  "note": "světlé výčepní pivo",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Pilsner Urquell",
+  "price": 229,
+  "old_price": null,
+  "volume": "1 l",
+  "price_per_l": null,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Budweiser Budvar Original 8pack",
+  "price": 134.9,
+  "old_price": 149.9,
+  "volume": "8× 0,5 l",
+  "price_per_l": 33.73,
+  "note": "světlý ležák; 0,5 l = 16,87 Kč; záloha na láhev 3 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Budweiser Budvar Original 6pack + 0,3 l ikonické sklo",
+  "price": 229,
+  "old_price": null,
+  "volume": "6× 0,33 l",
+  "price_per_l": null,
+  "note": "světlý ležák; 100 ml = 11,57 Kč; záloha na láhev 3 Kč; součástí 0,3 l ikonické sklo",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Bernard Sváteční ležák se džbánkem Karol Maier",
+  "price": 299,
+  "old_price": null,
+  "volume": "7× 0,5 l",
+  "price_per_l": 85.43,
+  "note": "sváteční ležák; 0,5 l = 42,72 Kč; záloha na láhev 7 Kč",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Heineken",
+  "price": 369,
+  "old_price": null,
+  "volume": "5 l",
+  "price_per_l": 73.8,
+  "note": "světlý ležák",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Guinness",
+  "price": 199,
+  "old_price": 219,
+  "volume": "3× 0,44 l",
+  "price_per_l": null,
+  "note": "svrchně kvasený stout; 100 ml = 15,08 Kč; součástí originální sklenice",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Bernard Soudek",
+  "price": 389,
+  "old_price": null,
+  "volume": "5 l",
+  "price_per_l": 77.8,
+  "note": "světlý ležák; neporazitelné",
+  "valid_from": null,
+  "valid_to": null
+ },
+ {
+  "name": "Krušovice Bohém",
+  "price": 249.9,
+  "old_price": null,
+  "volume": "8× 0,5 l",
+  "price_per_l": 62.25,
+  "note": "světlý ležák; 0,5 l = 31,13 Kč",
+  "valid_from": null,
+  "valid_to": null
+ }
+]
