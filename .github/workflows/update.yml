@@ -49,8 +49,8 @@ jobs:
             printf '%s' "$FALLBACK_SOURCE_B64" | base64 -d > scraper/private/fallback_source.py
           fi
 
-      # Přímé scrapery řetězců (Kaufland, Lidl, Billa, Tesco, Globus,
-      # Albert přes Claude API) + záložní zdroj -> data/pivo.json
+      # Přímé scrapery řetězců (Kaufland, Billa, Globus; letáky Albert,
+      # Lidl a Tesco přes Claude API) + záložní zdroj -> data/pivo.json
       - name: Scraping akcí
         env:
           PROXY_URL: ${{ secrets.PROXY_URL }}

@@ -9,3 +9,4 @@ venv/
 api/config.php
 api/data/*.sqlite
 scraper/private/
+api_key.txt

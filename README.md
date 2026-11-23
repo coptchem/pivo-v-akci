@@ -11,10 +11,12 @@ Běží na https://levne.pitpivo.cz/.
    akce přímo z webů řetězců a uloží je do `data/pivo.json`. Denní snapshoty
    se archivují v `data/history/` (porovnání pro upozornění, analýza toho,
    kdy řetězce akce zavádějí).
-   - **Albert** publikuje jen obrázkové letáky – stránky PDF letáků se
-     vyrenderují a akční piva z nich vytáhne **Claude API (Claude Haiku 5.5)**
-     se strukturovaným JSON výstupem. Výsledky se cachují podle ID letáku
-     (`data/cache/albert/`), API se tak volá jen pro nové letáky.
+   - **Albert, Lidl a Tesco** zveřejňují akce piva jen v letácích – stránky
+     letáků se vyrenderují a akční piva z nich vytáhne **Claude API
+     (Claude Haiku 5.5)** se strukturovaným JSON výstupem
+     (`scraper/chains/leaflet_ai.py`). Výsledky se cachují podle ID letáku
+     (`data/cache/<řetězec>/`), API se tak volá jen pro nové letáky
+     (řádově jednotky Kč týdně).
    - **Záložní zdroj** (`scraper/fallback.py`) doplňuje řetězce bez
      použitelného přímého zdroje (Penny, COOP) a zastupuje řetězec, jehož
      přímý scraper selže. Jeho implementace není součástí repozitáře; bez ní
@@ -45,9 +47,9 @@ Běží na https://levne.pitpivo.cz/.
 | Řetězec  | Zdroj | Dostupnost akcí |
 |----------|-------|-----------------|
 | Kaufland | SSR JSON z prodejny.kaufland.cz, celostátní seznam akcí | celostátní |
-| Lidl     | JSON API lidl.cz (gridboxes + fulltext) | celostátní |
+| Lidl     | akční letáky (API letáků; do Claude API jdou jen stránky, kde OCR text zmiňuje pivo) + online katalog lidl.cz | celostátní |
 | Billa    | product-discovery API billa.cz, kategorie Pivo (bez platnosti akcí) | celostátní |
-| Tesco    | GraphQL API akčních nabídek | podle formátu („jen hypermarkety/supermarkety") |
+| Tesco    | PDF letáky (aktuální + příští týden, verze HM a SM) → Claude API | podle formátu („jen hypermarkety/supermarkety") |
 | Globus   | interní API, všech 16 hypermarketů | podle prodejny („dostupné pouze: …") |
 | Albert   | PDF letáky (Publitas) → Claude API, cache per leták | podle formátu („jen hypermarkety/supermarkety") |
 | Penny    | záložní zdroj (web penny.cz publikuje jen výběr akcí; modul `penny.py` je k dispozici) | – |
@@ -60,7 +62,7 @@ Prodejnové nabídky (Kaufland, Tesco, Globus, COOP) se vážou na lokalitu
 
 ```bash
 pip install -r scraper/requirements.txt
-export ANTHROPIC_API_KEY=...      # volitelné – bez něj se Albert přeskočí
+export ANTHROPIC_API_KEY=...      # volitelné – bez něj jdou Albert/Lidl/Tesco ze zálohy
 python scraper/scrape.py          # -> data/pivo.json
 python -m http.server 8000        # otevřít http://localhost:8000
 ```
@@ -76,7 +78,7 @@ Secrets (Settings → Secrets and variables → Actions → Secrets):
 |--------|------|
 | FTP_HOST, FTP_USERNAME, FTP_PASSWORD, FTP_REMOTE_DIR | nasazení na hosting |
 | PROXY_URL | volitelná proxy pro scraping (některé weby blokují IP GitHub Actions) |
-| ANTHROPIC_API_KEY | extrakce Albert letáků přes Claude API |
+| ANTHROPIC_API_KEY | extrakce letáků (Albert, Lidl, Tesco) přes Claude API |
 | FALLBACK_SOURCE_B64 | volitelný záložní zdroj (base64 souboru `scraper/private/fallback_source.py`) |
 | SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS | odesílání upozornění (465 = SSL, jinak STARTTLS) |
 | EXPORT_TOKEN | tajný token (min. 32 znaků) pro `api/export.php`; deploy z něj generuje `api/config.php` |

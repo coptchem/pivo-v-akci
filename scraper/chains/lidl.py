@@ -1,15 +1,26 @@
 # -*- coding: utf-8 -*-
-"""Lidl – JSON API webu lidl.cz (gridboxes = akční produkty, + fulltext).
+"""Lidl – akční letáky (Schwarz leaflets API) + JSON API webu lidl.cz.
 
-Nabídka je celostátní, prodejnu není třeba vybírat.
+Potravinové akce (včetně piva) Lidl zveřejňuje jen v letácích. API letáků
+vrací ke každé stránce OCR klíčová slova, takže se do Claude API posílají
+jen stránky, kde se pivo vyskytuje (chains/leaflet_ai). Online katalog
+(gridboxes + fulltext) se prochází navíc – občas obsahuje akční pivo
+i s cenou. Nabídka je celostátní.
 """
 
+import html
 import re
 import time
 from datetime import date
 
-from chains.common import (DELAY_S, HEADERS, NOT_BEER_RE, get_session,
-                           make_item, per_litre_from_text)
+from chains import leaflet_ai
+from chains.common import (BEER_RE, DELAY_S, HEADERS, NOT_BEER_RE,
+                           get_session, make_item, parse_volume_l,
+                           per_litre_from_text)
+
+LEAFLETS_PAGE = "https://www.lidl.cz/c/akcni-letak/s10008644"
+FLYER_API = ("https://endpoints.leaflets.schwarz/v4/flyer"
+             "?flyer_identifier={slug}&region_id=0")
 
 GRID_URL = "https://www.lidl.cz/p/api/gridboxes/CZ/cs?max=400"
 SEARCH_URL = ("https://www.lidl.cz/q/api/search?q=pivo&offset={offset}"
@@ -64,33 +75,116 @@ def _norm(item):
     )
 
 
-def scrape(today):
-    s = get_session()
-    out, seen = [], set()
-
+def _online(s):
+    """Akční piva z online katalogu (často prázdné – piva bývají jen v letáku)."""
+    out = []
     for item in s.get(GRID_URL, headers=HEADERS, timeout=40).json():
         b = _norm(item)
-        if b and b["name"] not in seen:
-            seen.add(b["name"])
+        if b:
             out.append(b)
 
     offset = 0
     while True:
         time.sleep(DELAY_S)
-        d = s.get(SEARCH_URL.format(offset=offset), headers=HEADERS, timeout=40).json()
+        d = s.get(SEARCH_URL.format(offset=offset), headers=HEADERS,
+                  timeout=40).json()
         results = d.get("items", [])
         if not results:
             break
         for res in results:
             gb = (res.get("gridbox") or {}).get("data")
-            if not gb:
-                continue
-            b = _norm(gb)
-            if b and b["name"] not in seen:
-                seen.add(b["name"])
+            b = _norm(gb) if gb else None
+            if b:
                 out.append(b)
         offset += len(results)
         if offset >= d.get("numFound", 0):
             break
-
     return out
+
+
+def _flyers(s, today):
+    r = s.get(LEAFLETS_PAGE, headers=HEADERS, timeout=40)
+    r.raise_for_status()
+    slugs = sorted(set(re.findall(r"/l/cs/letak/([^/\"?#]+)/",
+                                  html.unescape(r.text))))
+    flyers = []
+    for slug in slugs:
+        time.sleep(DELAY_S / 2)
+        f = s.get(FLYER_API.format(slug=slug), headers=HEADERS,
+                  timeout=40).json().get("flyer") or {}
+        end = f.get("offerEndDate") or f.get("endDate") or ""
+        if f.get("pages") and end[:10] >= today.isoformat():
+            flyers.append(f)
+    return flyers
+
+
+def _beer_pages(flyer):
+    """Stránky letáku, jejichž OCR text zmiňuje pivo."""
+    out = []
+    for p in flyer["pages"]:
+        text = f"{p.get('keyWords') or ''} {p.get('altText') or ''}"
+        if BEER_RE.search(text) and p.get("zoom"):
+            out.append(p["zoom"])
+    return out
+
+
+def _from_leaflets(s, today):
+    client = leaflet_ai.make_client()
+    flyers = _flyers(s, today)
+    if not flyers:
+        raise ValueError("žádné aktuální letáky")
+    cache = leaflet_ai.LeafletCache("Lidl")
+    cache.prune(f["id"] for f in flyers)
+
+    items = []
+    for f in flyers:
+        raws = cache.get(f["id"])
+        if raws is None:
+            def fetch(url):
+                return lambda: leaflet_ai.shrink_jpeg(
+                    s.get(url, headers=HEADERS, timeout=60).content)
+            pages = [fetch(u) for u in _beer_pages(f)]
+            raws = leaflet_ai.extract_pages(client, pages, "Lidl", today.year)
+            cache.put(f["id"], raws)
+            print(f"Lidl: leták {f.get('name') or f['id']}: "
+                  f"{len(pages)} str. s pivem, {len(raws)} piv (nové)")
+        for raw in raws:
+            if NOT_BEER_RE.search(raw.get("name", "")):
+                continue
+            if raw.get("valid_to") and raw["valid_to"] < today.isoformat():
+                continue  # např. pondělní akce, která už skončila
+            volume = raw.get("volume")
+            per_l = raw.get("price_per_l")
+            notes = leaflet_ai.price_note(raw)
+            items.append(make_item(
+                name=str(raw["name"]),
+                price=raw["price"],
+                chain="Lidl",
+                volume=volume,
+                volume_l=parse_volume_l(volume or ""),
+                price_per_l=per_l if isinstance(per_l, (int, float)) else None,
+                valid_from=raw.get("valid_from")
+                or (f.get("offerStartDate") or "")[:10] or None,
+                valid_to=raw.get("valid_to")
+                or (f.get("offerEndDate") or "")[:10] or None,
+                note="; ".join(notes) or None,
+            ))
+    return items
+
+
+def scrape(today):
+    s = get_session()
+    out = _from_leaflets(s, today)
+    try:
+        out += _online(s)
+    except Exception as e:  # online katalog je jen doplněk
+        print(f"Lidl: online katalog nedostupný ({e})")
+
+    # stejné pivo může být v letáku i v katalogu / ve dvou letácích
+    seen, items = set(), []
+    for it in out:
+        key = (it["name"].lower(), it["price"], it.get("valid_from"))
+        if key not in seen:
+            seen.add(key)
+            items.append(it)
+    return items
