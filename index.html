@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pivo v akci</title>
+<meta name="description" content="Aktuální akční ceny piva v českých supermarketech – Kaufland, Lidl, Penny, Albert, Billa a další. Seřazeno od nejlevnějšího.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍺</text></svg>">
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --card: #ffffff;
+    --text: #1f1c17;
+    --muted: #7a746a;
+    --line: #e6e2d9;
+    --accent: #b8860b;
+    --price: #1f1c17;
+    --chip-bg: #ffffff;
+    --chip-on: #2b2620;
+    --chip-on-text: #ffffff;
+    --danger: #c0392b;
+    --future: #2e7d32;
+    --accent-soft: #fbf1d6;
+    --tag-bg: #f1ede4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17150f;
+      --card: #211e17;
+      --text: #f0ead9;
+      --muted: #a39a89;
+      --line: #35301f;
+      --accent: #e3b341;
+      --price: #f0ead9;
+      --chip-bg: #211e17;
+      --chip-on: #e3b341;
+      --chip-on-text: #17150f;
+      --danger: #ef6c5c;
+      --future: #81c784;
+      --accent-soft: #3a3016;
+      --tag-bg: #2c2820;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 48px;
+  }
+  header {
+    padding: 20px 16px 12px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.5rem; letter-spacing: -0.02em; }
+  .updated { color: var(--muted); font-size: 0.8rem; margin-top: 2px; }
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    padding: 8px 16px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  .controls-inner { max-width: 720px; margin: 0 auto; }
+  /* horní řádek: hledání (třetina) + tlačítko upozornění */
+  .toprow { display: flex; align-items: center; gap: 10px; }
+  .search {
+    flex: 0 0 34%;
+    min-width: 0;
+    padding: 9px 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--text);
+    outline: none;
+  }
+  .search:focus { border-color: var(--accent); }
+  .alert-btn {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--accent);
+    background: var(--accent-soft);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .alert-btn:hover { background: var(--accent); color: var(--chip-on-text); }
+  .alert-short { display: none; }
+  @media (max-width: 480px) {
+    .search { flex: 1 1 auto; }
+    .alert-long { display: none; }
+    .alert-short { display: inline; }
+  }
+  /* panel filtrů: obchody a značky jako dvě oddělené sekce */
+  .filters {
+    margin-top: 10px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 2px 12px;
+  }
+  .filter-row {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    align-items: start;
+    gap: 8px;
+    padding: 8px 0;
+  }
+  .filter-row + .filter-row { border-top: 1px dashed var(--line); }
+  .filter-label {
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 7px;
+  }
+  @media (max-width: 480px) {
+    .filter-row { grid-template-columns: 1fr; gap: 5px; }
+    .filter-label { padding-top: 0; }
+  }
+  .chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  /* obchody na mobilu v jednom posuvném řádku */
+  @media (max-width: 480px) {
+    #chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    #chips::-webkit-scrollbar { display: none; }
+  }
+  .chip {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: inherit;
+    color: var(--text);
+  }
+  /* obchod = pilulka s barevnou tečkou řetězce; aktivní má barvu řetězce */
+  .chip-shop {
+    padding: 5px 9px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg);
+  }
+  .chip-shop .shop-dot { width: 7px; height: 7px; }
+  .chip-shop { gap: 5px; }
+  #chips { gap: 5px; }
+  .chip-shop.on {
+    background: var(--c, var(--chip-on));
+    border-color: var(--c, var(--chip-on));
+    color: #fff;
+  }
+  .chip-shop.on:not([style]) { color: var(--chip-on-text); }
+  .chip-shop.on .shop-dot { background: #fff; }
+  /* značka = decentní štítek; aktivní zlatavý */
+  .chip-brand {
+    padding: 4px 9px;
+    font-size: 0.76rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: var(--tag-bg);
+  }
+  .chip-brand:hover { border-color: var(--line); }
+  .chip-brand.on {
+    background: var(--accent);
+    color: var(--chip-on-text);
+    font-weight: 600;
+  }
+  .sortrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .sort-toggle {
+    display: flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .sort-toggle button {
+    border: 0;
+    background: var(--chip-bg);
+    color: var(--text);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .sort-toggle button.on {
+    background: var(--chip-on);
+    color: var(--chip-on-text);
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 12px 16px; }
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .card-main { flex: 1; min-width: 0; }
+  .name { font-weight: 600; font-size: 0.95rem; line-height: 1.3; }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .shop-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .shop-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--dot, #999);
+    flex: 0 0 auto;
+  }
+  .validity.ends-today { color: var(--danger); font-weight: 600; }
+  .validity.future { color: var(--future); font-weight: 600; }
+  .note { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
+  .card-price { text-align: right; flex: 0 0 auto; }
+  .price { font-size: 1.25rem; font-weight: 700; color: var(--price); white-space: nowrap; }
+  .perl { font-size: 0.72rem; color: var(--muted); white-space: nowrap; margin-top: 2px; }
+  .volume { font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+  .empty, .error { text-align: center; color: var(--muted); padding: 48px 16px; }
+  /* přihlášení k odběru upozornění */
+  .subscribe { max-width: 720px; margin: 12px auto 0; padding: 0 16px; scroll-margin-top: 16px; }
+  .subscribe details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+  .subscribe summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; }
+  .subscribe details.flash { animation: flash 1.4s ease-out; }
+  @keyframes flash { from { box-shadow: 0 0 0 3px var(--accent); } to { box-shadow: 0 0 0 0 transparent; } }
+  .sub-label { font-size: 0.78rem; color: var(--muted); margin: 12px 0 6px; }
+  .sub-checks { display: flex; flex-wrap: wrap; gap: 6px 12px; }
+  .sub-checks label {
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .sub-checks input { accent-color: var(--accent); }
+  .sub-row { display: flex; gap: 8px; margin-top: 14px; }
+  .sub-row input[type=email] {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--text);
+    outline: none;
+  }
+  .sub-row input[type=email]:focus { border-color: var(--accent); }
+  .sub-row button {
+    border: 0;
+    background: var(--chip-on);
+    color: var(--chip-on-text);
+    border-radius: 10px;
+    padding: 9px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .sub-row button:disabled { opacity: 0.6; cursor: default; }
+  .sub-status { font-size: 0.8rem; margin-top: 10px; }
+  .sub-status.err { color: var(--danger); }
+  .sub-status.ok { color: var(--future); }
+  .sub-privacy { font-size: 0.72rem; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .sub-hp { position: absolute; left: -9999px; }
+  footer {
+    max-width: 720px;
+    margin: 24px auto 0;
+    padding: 0 16px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🍺 Pivo v akci</h1>
+  <div class="updated" id="updated"></div>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="toprow">
+      <input class="search" id="search" type="search" placeholder="Hledat pivo…" aria-label="Hledat pivo" autocomplete="off">
+      <a class="alert-btn" href="#upozorneni" id="alert-btn">🔔 <span class="alert-long">Upozornění e-mailem</span><span class="alert-short">Upozornění</span></a>
+    </div>
+    <div class="filters">
+      <div class="filter-row">
+        <div class="filter-label">Obchod</div>
+        <div class="chips" id="chips"></div>
+      </div>
+      <div class="filter-row">
+        <div class="filter-label">Značka</div>
+        <div class="chips" id="brand-chips"></div>
+      </div>
+    </div>
+    <div class="sortrow">
+      <span id="count"></span>
+      <div class="sort-toggle">
+        <button id="sort-perl" class="on">Kč / litr ↑</button>
+        <button id="sort-abs">Kč / kus</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="list"><div class="empty">Načítám akce…</div></main>
+
+<section class="subscribe" id="upozorneni">
+  <details id="sub-details">
+    <summary>📬 Hlídat akce e-mailem</summary>
+    <form id="sub-form">
+      <div class="sub-label">Řetězce (nic nezaškrtnete = všechny):</div>
+      <div class="sub-checks" id="sub-chains"></div>
+      <div class="sub-label">Značky (nic nezaškrtnete = všechny):</div>
+      <div class="sub-checks" id="sub-brands"></div>
+      <div class="sub-row">
+        <input type="email" id="sub-email" placeholder="vas@email.cz" required autocomplete="email">
+        <button type="submit" id="sub-submit">Odebírat</button>
+      </div>
+      <input type="text" name="web" id="sub-hp" class="sub-hp" tabindex="-1" autocomplete="off">
+      <div class="sub-status" id="sub-status"></div>
+      <div class="sub-privacy">Upozornění přijde, jen když se objeví nová akce podle vašeho
+        výběru (max 1× denně). Po přihlášení pošleme potvrzovací odkaz. E-mail použijeme
+        výhradně pro tato upozornění; odhlásit se lze odkazem v každém e-mailu – tím se
+        adresa smaže.</div>
+    </form>
+  </details>
+</section>
+
+<footer>
+  Data pocházejí z veřejně dostupných letáků, aktualizace 1× denně.<br>
+  Ceny se mohou lišit podle pobočky. Pijte s mírou. 🍻
+</footer>
+
+<script>
+const MAIN_CHAINS = ["Kaufland", "Lidl", "Penny", "Albert", "Billa", "Tesco", "Globus", "COOP"];
+const CHAIN_COLORS = {
+  "Kaufland": "#e10915",
+  "Lidl": "#0050aa",
+  "Penny": "#c8161d",
+  "Albert": "#00ade6",
+  "Billa": "#e30613",
+  "Tesco": "#00539f",
+  "Globus": "#f18700",
+  "COOP": "#e8641c",
+};
+
+// podřetězec v názvu (malými písmeny) -> kanonická značka; pořadí rozhoduje
+const BRAND_PATTERNS = [
+  ["gambrinus", "Gambrinus"],
+  ["pilsner", "Pilsner Urquell"],
+  ["kozel", "Kozel"],
+  ["radegast", "Radegast"],
+  ["budvar", "Budvar"], ["budweiser", "Budvar"],
+  ["pardál", "Pardál"], ["pardal", "Pardál"],
+  ["staropramen", "Staropramen"],
+  ["braník", "Braník"], ["branik", "Braník"],
+  ["krušovice", "Krušovice"], ["krusovice", "Krušovice"],
+  ["zlatopramen", "Zlatopramen"],
+  ["březňák", "Březňák"], ["breznak", "Březňák"],
+  ["starobrno", "Starobrno"],
+  ["bernard", "Bernard"],
+  ["svijan", "Svijany"],
+  ["primátor", "Primátor"], ["primator", "Primátor"],
+  ["primus", "Primus"],
+  ["lobkowicz", "Lobkowicz"],
+  ["černá hora", "Černá Hora"], ["cerna hora", "Černá Hora"],
+  ["litovel", "Litovel"],
+  ["zubr", "Zubr"],
+  ["holba", "Holba"],
+  ["poutník", "Poutník"], ["poutnik", "Poutník"],
+  ["bakalář", "Bakalář"], ["bakalar", "Bakalář"],
+  ["rohozec", "Rohozec"],
+  ["chotěboř", "Chotěboř"], ["chotebor", "Chotěboř"],
+  ["ferdinand", "Ferdinand"],
+  ["samson", "Samson"],
+  ["regent", "Regent"],
+  ["platan", "Platan"],
+  ["dudák", "Dudák"], ["dudak", "Dudák"],
+  ["klášter", "Klášter"], ["klaster", "Klášter"],
+  ["rychtář", "Rychtář"], ["rychtar", "Rychtář"],
+  ["birell", "Birell"],
+  ["heineken", "Heineken"],
+  ["zlatý bažant", "Zlatý Bažant"], ["zlaty bazant", "Zlatý Bažant"],
+  ["desperados", "Desperados"],
+  ["corona", "Corona"],
+  ["stella artois", "Stella Artois"],
+  ["hoegaarden", "Hoegaarden"],
+  ["leffe", "Leffe"],
+  ["paulaner", "Paulaner"],
+  ["erdinger", "Erdinger"],
+  ["krombacher", "Krombacher"],
+  ["warsteiner", "Warsteiner"],
+  ["argus", "Argus"],
+  ["perlenbacher", "Perlenbacher"],
+  ["excelent", "Excelent"],
+  ["velvet", "Velvet"],
+];
+
+function brandOf(name) {
+  const low = name.toLowerCase();
+  for (const [pat, canonical] of BRAND_PATTERNS) {
+    if (low.includes(pat)) return canonical;
+  }
+  return null; // neznámá značka -> bez chipu (jen pod „Vše")
+}
+
+let items = [];
+let filter = "vse";
+let brandFilter = "vse";
+let sortMode = "perl";
+let sortDir = 1;   // 1 = od nejlevnějšího, -1 = od nejdražšího
+let query = "";
+
+const fmtPrice = v => v.toLocaleString("cs-CZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " Kč";
+const fmtDate = iso => {
+  if (!iso) return null;
+  const d = new Date(iso + "T00:00:00");
+  return d.getDate() + ". " + (d.getMonth() + 1) + ".";
+};
+const todayIso = () => {
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+};
+
+function validityLabel(it) {
+  const today = todayIso();
+  if (it.valid_to && it.valid_to < today) return { text: "akce skončila", cls: "ends-today" };
+  if (it.valid_from && it.valid_from > today) {
+    return { text: "od " + fmtDate(it.valid_from) + (it.valid_to ? " do " + fmtDate(it.valid_to) : ""), cls: "future" };
+  }
+  if (it.valid_to === today) return { text: "končí dnes", cls: "ends-today" };
+  if (it.valid_to) return { text: "do " + fmtDate(it.valid_to), cls: "" };
+  if (it.validity_text) return { text: it.validity_text, cls: "" };
+  return null;
+}
+
+function baseItems() {
+  const today = todayIso();
+  return items.filter(it => MAIN_CHAINS.includes(it.chain) && !(it.valid_to && it.valid_to < today));
+}
+
+function render() {
+  let shown = baseItems();
+
+  if (filter !== "vse") shown = shown.filter(it => it.chain === filter);
+  if (brandFilter !== "vse") shown = shown.filter(it => it.brand === brandFilter);
+
+  if (query) {
+    const q = query.toLowerCase();
+    shown = shown.filter(it => it.name.toLowerCase().includes(q) || it.shop.toLowerCase().includes(q));
+  }
+
+  shown.sort((a, b) => {
+    const pa = sortMode === "perl" ? a.price_per_l : a.price;
+    const pb = sortMode === "perl" ? b.price_per_l : b.price;
+    if (pa == null && pb == null) return a.price - b.price;
+    if (pa == null) return 1;   // bez známé jednotkové ceny vždy nakonec
+    if (pb == null) return -1;
+    return sortDir * (pa - pb) || sortDir * (a.price - b.price);
+  });
+
+  document.getElementById("count").textContent = shown.length + " akcí";
+
+  const list = document.getElementById("list");
+  if (!shown.length) {
+    list.innerHTML = '<div class="empty">Nic nenalezeno 🤷</div>';
+    return;
+  }
+
+  list.innerHTML = shown.map(it => {
+    const color = CHAIN_COLORS[it.chain] || "#999";
+    const val = validityLabel(it);
+    return `<div class="card">
+      <div class="card-main">
+        <div class="name">${esc(it.name)}</div>
+        <div class="meta">
+          <span class="shop-badge"><span class="shop-dot" style="--dot:${color}"></span>${esc(it.shop)}</span>
+          ${val ? `<span>·</span><span class="validity ${val.cls}">${esc(val.text)}</span>` : ""}
+        </div>
+        ${it.note ? `<div class="note">${esc(it.note)}</div>` : ""}
+      </div>
+      <div class="card-price">
+        <div class="price">${fmtPrice(it.price)}</div>
+        ${it.volume ? `<div class="volume">${esc(it.volume)}</div>` : ""}
+        ${it.price_per_l ? `<div class="perl">${fmtPrice(it.price_per_l)} / l</div>` : ""}
+      </div>
+    </div>`;
+  }).join("");
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function buildChips() {
+  const defs = [["vse", "Vše"], ...MAIN_CHAINS.map(c => [c, c])];
+  const el = document.getElementById("chips");
+  el.innerHTML = defs.map(([key, label]) => {
+    const color = CHAIN_COLORS[key];
+    const dot = color ? `<span class="shop-dot" style="--dot:${color}"></span>` : "";
+    return `<button class="chip chip-shop${key === filter ? " on" : ""}" data-key="${key}"` +
+      (color ? ` style="--c:${color}"` : "") + `>${dot}${label}</button>`;
+  }).join("");
+  el.querySelectorAll(".chip").forEach(btn => btn.addEventListener("click", () => {
+    filter = btn.dataset.key;
+    buildChips();
+    buildBrandChips();
+    render();
+  }));
+}
+
+function buildBrandChips() {
+  // značky dostupné v aktuálně vybraném řetězci, seřazené podle počtu akcí
+  let pool = baseItems();
+  if (filter !== "vse") pool = pool.filter(it => it.chain === filter);
+  const counts = new Map();
+  pool.forEach(it => { if (it.brand) counts.set(it.brand, (counts.get(it.brand) || 0) + 1); });
+  const brands = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([b]) => b);
+  if (!brands.includes(brandFilter)) brandFilter = "vse";
+
+  const el = document.getElementById("brand-chips");
+  el.innerHTML = [["vse", "Vše"], ...brands.map(b => [b, b])].map(([key, label]) =>
+    `<button class="chip chip-brand${key === brandFilter ? " on" : ""}" data-key="${esc(key)}">${esc(label)}</button>`).join("");
+  // max 2 řádky: odebírej méně zastoupené značky od konce, dokud se řádky nevejdou
+  const rowCount = () => new Set([...el.children].map(c => c.offsetTop)).size;
+  while (el.children.length > 1 && rowCount() > 2) {
+    let last = el.lastElementChild;
+    if (last.classList.contains("on")) last = last.previousElementSibling;
+    last.remove();
+  }
+  el.querySelectorAll(".chip").forEach(btn => btn.addEventListener("click", () => {
+    brandFilter = btn.dataset.key;
+    buildBrandChips();
+    render();
+  }));
+}
+
+document.getElementById("search").addEventListener("input", e => {
+  query = e.target.value.trim();
+  render();
+});
+function buildSubscribeForm() {
+  document.getElementById("sub-chains").innerHTML = MAIN_CHAINS.map(c =>
+    `<label><input type="checkbox" value="${c}">${c}</label>`).join("");
+  const counts = new Map();
+  items.forEach(it => { if (it.brand) counts.set(it.brand, (counts.get(it.brand) || 0) + 1); });
+  const brands = [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([b]) => b);
+  document.getElementById("sub-brands").innerHTML = brands.map(b =>
+    `<label><input type="checkbox" value="${esc(b)}">${esc(b)}</label>`).join("");
+}
+
+document.getElementById("sub-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const status = document.getElementById("sub-status");
+  const btn = document.getElementById("sub-submit");
+  const payload = {
+    email: document.getElementById("sub-email").value.trim(),
+    chains: [...document.querySelectorAll("#sub-chains input:checked")].map(i => i.value),
+    brands: [...document.querySelectorAll("#sub-brands input:checked")].map(i => i.value),
+    web: document.getElementById("sub-hp").value,
+  };
+  btn.disabled = true;
+  status.className = "sub-status";
+  status.textContent = "Odesílám…";
+  try {
+    const r = await fetch("api/subscribe.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const data = await r.json();
+    if (!r.ok || !data.ok) throw new Error(data.error || "chyba serveru");
+    status.className = "sub-status ok";
+    status.textContent = data.message || "Hotovo! Zkontrolujte e-mail a potvrďte odběr.";
+    e.target.reset();
+  } catch (err) {
+    status.className = "sub-status err";
+    status.textContent = "Nepodařilo se: " + err.message;
+  }
+  btn.disabled = false;
+});
+
+// tlačítko „Upozornění e-mailem": otevře formulář a předvyplní aktuální filtr
+function openSubscribe(prefill) {
+  const det = document.getElementById("sub-details");
+  det.open = true;
+  if (prefill) {
+    document.querySelectorAll("#sub-chains input").forEach(i => { i.checked = i.value === filter; });
+    document.querySelectorAll("#sub-brands input").forEach(i => { i.checked = i.value === brandFilter; });
+  }
+  document.getElementById("upozorneni").scrollIntoView({ behavior: "smooth", block: "start" });
+  det.classList.remove("flash"); void det.offsetWidth; det.classList.add("flash");
+  setTimeout(() => document.getElementById("sub-email").focus({ preventScroll: true }), 450);
+}
+document.getElementById("alert-btn").addEventListener("click", e => {
+  e.preventDefault();
+  history.replaceState(null, "", "#upozorneni");
+  openSubscribe(true);
+});
+
+document.getElementById("sort-perl").addEventListener("click", () => setSort("perl"));
+document.getElementById("sort-abs").addEventListener("click", () => setSort("abs"));
+function setSort(mode) {
+  // klik na už aktivní tlačítko obrátí směr řazení
+  if (sortMode === mode) sortDir = -sortDir;
+  else { sortMode = mode; sortDir = 1; }
+  const arrow = sortDir === 1 ? " ↑" : " ↓";
+  const perlBtn = document.getElementById("sort-perl");
+  const absBtn = document.getElementById("sort-abs");
+  perlBtn.textContent = "Kč / litr" + (sortMode === "perl" ? arrow : "");
+  absBtn.textContent = "Kč / kus" + (sortMode === "abs" ? arrow : "");
+  perlBtn.classList.toggle("on", sortMode === "perl");
+  absBtn.classList.toggle("on", sortMode === "abs");
+  render();
+}
+
+fetch("data/pivo.json?v=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(data => {
+    items = data.items;
+    items.forEach(it => { if (!it.brand) it.brand = brandOf(it.name); });
+    const d = new Date(data.updated + "T00:00:00");
+    document.getElementById("updated").textContent =
+      "Aktualizováno " + d.getDate() + ". " + (d.getMonth() + 1) + ". " + d.getFullYear();
+    buildChips();
+    buildBrandChips();
+    buildSubscribeForm();
+    render();
+    if (location.hash === "#upozorneni") openSubscribe(false);
+  })
+  .catch(() => {
+    document.getElementById("list").innerHTML =
+      '<div class="error">Nepodařilo se načíst data. Zkuste to prosím později.</div>';
+  });
+</script>
+</body>
+</html>

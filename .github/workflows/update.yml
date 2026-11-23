@@ -1,0 +1,137 @@
+name: Aktualizace a nasazení
+
+on:
+  schedule:
+    # 3:17 UTC = 4:17 SEČ / 5:17 SELČ. Minuta mimo :00/:30 – v plných
+    # hodinách GitHub naplánované běhy výrazně zpožďuje (i o hodiny).
+    - cron: "17 3 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "data/pivo.json"
+      - "api/**"
+  workflow_dispatch:
+
+# dva běhy nikdy souběžně (commit dat + FTP deploy)
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  # Spouští se jen cronem nebo ručně, ne při pushi.
+  scrape:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # commit nových dat
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalace závislostí
+        run: pip install -r scraper/requirements.txt
+
+      # Implementace záložního zdroje není ve veřejném repozitáři – přichází
+      # jako base64 v secretu. Bez něj běží scraper jen s přímými zdroji.
+      - name: Příprava záložního zdroje
+        env:
+          FALLBACK_SOURCE_B64: ${{ secrets.FALLBACK_SOURCE_B64 }}
+        run: |
+          if [ -n "$FALLBACK_SOURCE_B64" ]; then
+            mkdir -p scraper/private
+            printf '%s' "$FALLBACK_SOURCE_B64" | base64 -d > scraper/private/fallback_source.py
+          fi
+
+      # Přímé scrapery řetězců (Kaufland, Lidl, Billa, Tesco, Globus,
+      # Albert přes Claude API) + záložní zdroj -> data/pivo.json
+      - name: Scraping akcí
+        env:
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scraper/scrape.py
+
+      # E-mailová upozornění odběratelům na nové akce (double opt-in,
+      # odběratelé se stahují z api/export.php na hostingu). Bez SMTP
+      # secrets se krok jen přeskočí.
+      - name: Rozeslání e-mailových upozornění
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          MAIL_FROM: ${{ vars.MAIL_FROM }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          EXPORT_TOKEN: ${{ secrets.EXPORT_TOKEN }}
+        run: python scraper/send_digest.py
+
+      - name: Commit nových dat
+        run: |
+          rm -f scraper/private/fallback_source.py
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Žádná změna dat."
+          else
+            git commit -m "Aktualizace dat $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+  # Nasazení na hosting: po scrapingu, nebo přímo při pushi dat/webu
+  # (pushe od github-actions bota nový workflow nespouštějí, proto
+  # musí nasazení proběhnout ve stejném běhu hned po scrape jobu).
+  deploy:
+    needs: [scrape]
+    if: always() && (github.event_name == 'push' || needs.scrape.result == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main   # čerstvý main včetně commitu ze scrape jobu
+
+      - name: Příprava souborů k nasazení
+        env:
+          EXPORT_TOKEN: ${{ secrets.EXPORT_TOKEN }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          MAIL_FROM: ${{ vars.MAIL_FROM }}
+        run: |
+          mkdir -p publish/data publish/api
+          cp index.html publish/
+          cp data/pivo.json publish/data/
+          # API odběrů: PHP soubory + config s tajným tokenem pro export
+          # (databáze subscribers.sqlite žije jen na hostingu, mirror bez
+          # --delete ji nesmaže)
+          cp -r api/. publish/api/
+          rm -f publish/api/config.example.php
+          if [ -n "$EXPORT_TOKEN" ]; then
+            python3 scraper/write_php_config.py publish/api/config.php
+          fi
+
+      - name: Nahrání na hosting (lftp)
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+          # Spojení je šifrované (ftp:ssl-force), ověření certifikátu je ale
+          # vypnuté – pokud má FTP hostingu platný certifikát pro FTP_HOST,
+          # doporučuji nastavit ssl:verify-certificate true.
+          lftp -u "$FTP_USER,$FTP_PASS" "$FTP_HOST" -e "
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate false;
+            set net:timeout 30;
+            set net:max-retries 2;
+            mirror -R publish/ '$REMOTE_DIR';
+            bye"

@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.env.*
+
+# tajné / lokální soubory – nikdy necommitovat
+api/config.php
+api/data/*.sqlite
+scraper/private/
