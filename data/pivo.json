@@ -17,7 +17,7 @@
   },
   "Tesco": {
    "source": "záloha",
-   "count": 24,
+   "count": 40,
    "error": "HTTPError: HTTP Error 400: "
   },
   "Globus": {
@@ -26,7 +26,7 @@
   },
   "Albert": {
    "source": "záloha",
-   "count": 59,
+   "count": 91,
    "error": "RuntimeError: ANTHROPIC_API_KEY není nastaven"
   },
   "Penny": {
