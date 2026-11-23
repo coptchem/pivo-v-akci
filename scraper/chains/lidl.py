@@ -149,7 +149,8 @@ def _from_leaflets(s, today):
             print(f"Lidl: leták {f.get('name') or f['id']}: "
                   f"{len(pages)} str. s pivem, {len(raws)} piv (nové)")
         for raw in raws:
-            if NOT_BEER_RE.search(raw.get("name", "")):
+            if NOT_BEER_RE.search(raw.get("name", "")) \
+                    or not leaflet_ai.is_beer_offer(raw):
                 continue
             if raw.get("valid_to") and raw["valid_to"] < today.isoformat():
                 continue  # např. pondělní akce, která už skončila

@@ -21,7 +21,7 @@ if (!is_array($input)) {
     json_response(400, ['ok' => false, 'error' => 'Neplatný požadavek.']);
 }
 
-$okMessage = 'Hotovo! Do e-mailu jsme poslali potvrzovací odkaz – bez potvrzení se nic nezmění.';
+$okMessage = 'Hotovo! Do e-mailu jsme poslali potvrzovací odkaz.';
 
 if (!empty($input['web'])) {
     // honeypot vyplněn -> bot; tváříme se, že vše prošlo

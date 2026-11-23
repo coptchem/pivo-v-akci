@@ -31,8 +31,10 @@ PROMPT = (
     "např. s aplikací nebo kartou, uveď tuto cenu a podmínku dej do note); "
     "old_price = původní cena, pokud je uvedena; volume = objem, např. "
     "\"0,5 l\" nebo \"6× 0,5 l\"; price_per_l = cena za litr, pokud je "
-    "uvedena; note = podmínka akce (např. s aplikací, cena za kus při koupi "
-    "X kusů); valid_from / valid_to = platnost akce ve formátu YYYY-MM-DD, "
+    "uvedena; note = jen krátká podmínka ceny (pár slov), např. \"s Clubcard\", "
+    "\"s Lidl Plus\", \"při koupi 2 ks\", \"platí jen pá–ne\" – obal, zálohu, "
+    "druh piva, běžnou cenu ani cenu za litr do note nepiš, jinak null; "
+    "valid_from / valid_to = platnost akce ve formátu YYYY-MM-DD, "
     "pokud je na stránce uvedena (rok {year}). Co na stránce není, dej null. "
     "Pokud na stránce žádné pivo není, vrať prázdný seznam offers."
 )
@@ -191,11 +193,42 @@ class LeafletCache:
                 old.unlink()
 
 
+# Z poznámky modelu se ponechají jen podmínky ceny; obal, záloha, druh piva,
+# běžná cena, cena za litr apod. se zahodí (jsou jinde nebo nezajímavé).
+_KEEP_RE = re.compile(
+    r"clubcard|lidl plus|aplikac|kart|při koupi|od \d+\s*ks|\d+\s*\+\s*\d+"
+    r"|platí (jen|pouze)|pouze|dárkové balení", re.I)
+_NOT_BEER_NOTE_RE = re.compile(r"nejde o pivo|není pivo", re.I)
+
+
+def _short_note(note):
+    out = []
+    for part in re.split(r"[;,.]\s*", note or ""):
+        part = part.strip(" ▼▾-–")
+        if not part or not _KEEP_RE.search(part):
+            continue
+        low = part.lower()
+        if "clubcard" in low:
+            part = "s Clubcard"
+        elif "lidl plus" in low:
+            part = "s Lidl Plus"
+        elif "aplikac" in low:
+            part = "s aplikací"
+        else:
+            part = part[0].lower() + part[1:]
+        if part not in out:
+            out.append(part)
+    return out
+
+
+def is_beer_offer(raw):
+    """Model občas přidá ne-pivo a sám to v poznámce přizná."""
+    return not _NOT_BEER_NOTE_RE.search(str(raw.get("note") or ""))
+
+
 def price_note(raw):
-    """Poznámka z extrahované nabídky (podmínka + původní cena)."""
-    notes = []
-    if raw.get("note"):
-        notes.append(str(raw["note"]))
+    """Krátká poznámka z extrahované nabídky (podmínka + původní cena)."""
+    notes = _short_note(raw.get("note"))
     old = raw.get("old_price")
     if isinstance(old, (int, float)) and old > raw["price"]:
         notes.append(f"původně {old:.2f} Kč".replace(".", ","))

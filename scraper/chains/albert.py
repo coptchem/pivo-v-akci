@@ -70,6 +70,8 @@ def scrape(today):
             cache.put(lf["id"], raws)
             print(f"Albert: leták {lf['title']}: {len(raws)} piv (nové)")
         for raw in raws:
+            if not leaflet_ai.is_beer_offer(raw):
+                continue
             key = (str(raw.get("name", "")).lower(), raw.get("price"))
             entry = grouped.setdefault(key, {"raw": raw, "lf": lf,
                                              "types": set()})

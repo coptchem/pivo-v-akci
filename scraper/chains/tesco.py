@@ -70,7 +70,8 @@ def scrape(today):
             print(f"Tesco: leták P{lf['period'][1]} {lf['format']}: "
                   f"{len(raws)} piv (nové)")
         for raw in raws:
-            if NOT_BEER_RE.search(raw.get("name", "")):
+            if NOT_BEER_RE.search(raw.get("name", "")) \
+                    or not leaflet_ai.is_beer_offer(raw):
                 continue
             key = (raw["name"].lower(), raw["price"], raw.get("valid_from"))
             entry = grouped.setdefault(key, {"raw": raw, "formats": set()})
