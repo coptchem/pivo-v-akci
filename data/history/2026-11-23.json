@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-23",
- "count": 233,
+ "count": 232,
  "sources": {
   "Kaufland": {
    "source": "přímo",
@@ -16,7 +16,7 @@
   },
   "Tesco": {
    "source": "přímo",
-   "count": 39
+   "count": 38
   },
   "Globus": {
    "source": "přímo",
@@ -75,7 +75,7 @@
    "valid_from": "2026-11-26",
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
-   "note": "záloha na lahev 3 Kč; původně 13,90 Kč",
+   "note": "původně 13,90 Kč",
    "brand": "Argus"
   },
   {
@@ -89,7 +89,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "záloha na láhev 3 Kč; původně 16,90 Kč; jen hypermarkety",
+   "note": "původně 16,90 Kč; jen hypermarkety",
    "brand": "Staropramen"
   },
   {
@@ -131,7 +131,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlé výčepní pivo; původně 16,90 Kč; jen supermarkety",
+   "note": "původně 16,90 Kč; jen supermarkety",
    "brand": "Staropramen"
   },
   {
@@ -229,7 +229,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "super cena; jen supermarkety",
+   "note": "jen supermarkety",
    "brand": "Zlatopramen"
   },
   {
@@ -243,7 +243,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlé výčepní pivo; původně 49,90 Kč; jen supermarkety",
+   "note": "původně 49,90 Kč; jen supermarkety",
    "brand": "Braník"
   },
   {
@@ -285,7 +285,7 @@
    "valid_from": "2026-11-26",
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
-   "note": "záloha na láhev 3 Kč",
+   "note": null,
    "brand": "Klášter"
   },
   {
@@ -327,7 +327,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Super cena; sklo; záloha na láhev 3 Kč; cena pro všechny; původně 11,90 Kč; jen hypermarkety",
+   "note": "původně 11,90 Kč; jen hypermarkety",
    "brand": "Svijany"
   },
   {
@@ -439,7 +439,7 @@
    "valid_from": "2026-11-26",
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
-   "note": "světlý ležák, záloha na lahev 3 Kč",
+   "note": null,
    "brand": null
   },
   {
@@ -453,7 +453,7 @@
    "valid_from": "2026-11-26",
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
-   "note": "s Lidl Plus, různé druhy; původně 16,90 Kč",
+   "note": "s Lidl Plus; původně 16,90 Kč",
    "brand": "Argus"
   },
   {
@@ -467,7 +467,7 @@
    "valid_from": "2026-11-23",
    "valid_to": "2026-11-25",
    "validity_text": "23. 11. – 25. 11.",
-   "note": "tmavý ležák, záloha na lahev 3 Kč; původně 16,90 Kč",
+   "note": "původně 16,90 Kč",
    "brand": "Argus"
   },
   {
@@ -551,7 +551,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Clubcard cena; sklo, světlé výčepní; záloha na láhev 3 Kč; původně 18,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 18,90 Kč; jen hypermarkety",
    "brand": "Budvar"
   },
   {
@@ -565,7 +565,7 @@
    "valid_from": null,
    "valid_to": null,
    "validity_text": null,
-   "note": "Clubcard cena; sklo; záloha na láhev 3 Kč; původně 17,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 17,90 Kč; jen hypermarkety",
    "brand": "Staropramen"
   },
   {
@@ -593,7 +593,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlý ležák; původně 23,90 Kč; jen supermarkety",
+   "note": "původně 23,90 Kč; jen supermarkety",
    "brand": "Zlatý Bažant"
   },
   {
@@ -607,7 +607,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlý ležák; původně 21,90 Kč; jen supermarkety",
+   "note": "původně 21,90 Kč; jen supermarkety",
    "brand": "Lobkowicz"
   },
   {
@@ -663,7 +663,7 @@
    "valid_from": "2026-11-26",
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
-   "note": "záloha na lahev 3 Kč; původně 23,90 Kč",
+   "note": "původně 23,90 Kč",
    "brand": "Zlatý Bažant"
   },
   {
@@ -733,7 +733,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "s Clubcard; sklo, světlé výčepní; záloha na láhev 3 Kč; 1 l = 33,80 Kč bez Clubcard; původně 16,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 16,90 Kč; jen hypermarkety",
    "brand": "Gambrinus"
   },
   {
@@ -747,7 +747,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "Super cena; světlé výčepní; záloha na láhev 3 Kč",
+   "note": null,
    "brand": "Kozel"
   },
   {
@@ -761,7 +761,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "záloha na láhev 3 Kč; původně 16,90 Kč; jen hypermarkety",
+   "note": "původně 16,90 Kč; jen hypermarkety",
    "brand": "Gambrinus"
   },
   {
@@ -775,7 +775,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "záloha na láhev 3 Kč; ▾ nejnižší cena za posledních 30 dní; původně 16,90 Kč; jen supermarkety",
+   "note": "původně 16,90 Kč; jen supermarkety",
    "brand": "Gambrinus"
   },
   {
@@ -831,7 +831,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "1 ks za 13,32 Kč; původně 129,90 Kč; jen hypermarkety",
+   "note": "původně 129,90 Kč; jen hypermarkety",
    "brand": "Staropramen"
   },
   {
@@ -873,7 +873,7 @@
    "valid_from": "2026-11-23",
    "valid_to": "2026-11-25",
    "validity_text": "23. 11. – 25. 11.",
-   "note": "záloha na lahev 3 Kč, ušetříte 36 %",
+   "note": null,
    "brand": "Radegast"
   },
   {
@@ -929,7 +929,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Clubcard cena; původně 21,90 Kč; jen supermarkety",
+   "note": "s Clubcard; původně 21,90 Kč; jen supermarkety",
    "brand": "Krušovice"
   },
   {
@@ -943,7 +943,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "záloha na láhev 3 Kč; původně 21,90 Kč; jen hypermarkety",
+   "note": "původně 21,90 Kč; jen hypermarkety",
    "brand": "Gambrinus"
   },
   {
@@ -971,7 +971,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "ochucené nealkoholické pivo, vybrané druhy; původně 23,90 Kč",
+   "note": "původně 23,90 Kč",
    "brand": null
   },
   {
@@ -985,7 +985,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "nealkoholické pivo, záloha na láhev 3 Kč; původně 20,90 Kč; jen hypermarkety",
+   "note": "původně 20,90 Kč; jen hypermarkety",
    "brand": "Birell"
   },
   {
@@ -1041,7 +1041,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Clubcard cena; běžná cena 22,90 Kč; cena za 1 l s Clubcard 27,80 Kč; původně 22,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 22,90 Kč; jen hypermarkety",
    "brand": "Krušovice"
   },
   {
@@ -1055,7 +1055,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Clubcard cena; neplatí pro HM Praha Máj Národní; původně 57,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 57,90 Kč; jen hypermarkety",
    "brand": "Krušovice"
   },
   {
@@ -1069,7 +1069,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlý ležák; původně 58,90 Kč; jen supermarkety",
+   "note": "původně 58,90 Kč; jen supermarkety",
    "brand": "Krušovice"
   },
   {
@@ -1111,7 +1111,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Clubcard cena; plech, dva druhy; původně 22,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 22,90 Kč; jen hypermarkety",
    "brand": "Krušovice"
   },
   {
@@ -1139,7 +1139,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "záloha na láhev 3 Kč; původně 21,90 Kč; jen hypermarkety",
+   "note": "původně 21,90 Kč; jen hypermarkety",
    "brand": null
   },
   {
@@ -1209,7 +1209,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "1 ks za 14,99 Kč; původně 134,90 Kč; jen hypermarkety",
+   "note": "původně 134,90 Kč; jen hypermarkety",
    "brand": "Gambrinus"
   },
   {
@@ -1293,7 +1293,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "sklo, více druhů; záloha na láhev 3 Kč; původně 19,90 Kč",
+   "note": "původně 19,90 Kč",
    "brand": "Kozel"
   },
   {
@@ -1307,7 +1307,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-08",
    "validity_text": "25. 11. – 8. 12.",
-   "note": "s Clubcard; běžná cena 23,90 Kč; původně 23,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 23,90 Kč; jen hypermarkety",
    "brand": "Staropramen"
   },
   {
@@ -1321,7 +1321,7 @@
    "valid_from": null,
    "valid_to": null,
    "validity_text": null,
-   "note": "Clubcard cena; původně 22,90 Kč",
+   "note": "s Clubcard; původně 22,90 Kč",
    "brand": "Gambrinus"
   },
   {
@@ -1335,7 +1335,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-08",
    "validity_text": "25. 11. – 8. 12.",
-   "note": "s Clubcard; nealkoholické pivo, plech, více druhů; běžná cena 23,90 Kč, 1 l bez Clubcard = 47,80 Kč; původně 23,90 Kč; jen supermarkety",
+   "note": "s Clubcard; původně 23,90 Kč; jen supermarkety",
    "brand": "Staropramen"
   },
   {
@@ -1349,7 +1349,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "záloha na láhev 3 Kč; původně 19,90 Kč",
+   "note": "původně 19,90 Kč",
    "brand": "Kozel"
   },
   {
@@ -1391,7 +1391,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; nejnižší cena za posledních 30 dní 15,90 Kč; původně 24,90 Kč; jen hypermarkety",
+   "note": "původně 24,90 Kč; jen hypermarkety",
    "brand": "Krušovice"
   },
   {
@@ -1419,7 +1419,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlý ležák; původně 26,90 Kč; jen supermarkety",
+   "note": "původně 26,90 Kč; jen supermarkety",
    "brand": null
   },
   {
@@ -1433,7 +1433,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlý ležák; původně 23,90 Kč; jen supermarkety",
+   "note": "původně 23,90 Kč; jen supermarkety",
    "brand": "Starobrno"
   },
   {
@@ -1475,7 +1475,7 @@
    "valid_from": "2026-11-23",
    "valid_to": "2026-11-25",
    "validity_text": "23. 11. – 25. 11.",
-   "note": "cena za kus 16,24 Kč",
+   "note": null,
    "brand": "Krušovice"
   },
   {
@@ -1503,7 +1503,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlé výčepní pivo; 0,5 l = 16,49 Kč; nejnižší cena za posledních 30 dní 98,90 Kč; původně 153,00 Kč; jen hypermarkety",
+   "note": "původně 153,00 Kč; jen hypermarkety",
    "brand": "Radegast"
   },
   {
@@ -1517,7 +1517,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "1 ks za 16,65 Kč; původně 147,00 Kč; jen supermarkety",
+   "note": "původně 147,00 Kč; jen supermarkety",
    "brand": "Kozel"
   },
   {
@@ -1531,7 +1531,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; 0,5 l = 16,87 Kč; záloha na láhev 3 Kč; původně 149,90 Kč; jen hypermarkety",
+   "note": "původně 149,90 Kč; jen hypermarkety",
    "brand": "Budvar"
   },
   {
@@ -1545,7 +1545,7 @@
    "valid_from": "2026-11-26",
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
-   "note": "záloha na lahev 3 Kč",
+   "note": null,
    "brand": "Radegast"
   },
   {
@@ -1587,7 +1587,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "s Clubcard; plech; běžná cena 26,90 Kč, 1 l = 53,80 Kč bez Clubcard; původně 26,90 Kč",
+   "note": "s Clubcard; původně 26,90 Kč",
    "brand": "Staropramen"
   },
   {
@@ -1601,7 +1601,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-08",
    "validity_text": "25. 11. – 8. 12.",
-   "note": "Clubcard cena; běžná cena 24,90 Kč; cena za 1 l s Clubcard 33,80 Kč; původně 24,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 24,90 Kč; jen hypermarkety",
    "brand": "Kozel"
   },
   {
@@ -1629,7 +1629,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "vybrané druhy; původně 25,90 Kč; jen hypermarkety",
+   "note": "původně 25,90 Kč; jen hypermarkety",
    "brand": null
   },
   {
@@ -1657,7 +1657,7 @@
    "valid_from": "2026-11-20",
    "valid_to": "2026-11-22",
    "validity_text": "20. 11. – 22. 11.",
-   "note": "světlý ležák; ▼ nejnižší cena za posledních 30 dní; platí pouze PÁ–NE; původně 27,90 Kč; jen supermarkety",
+   "note": "platí pouze PÁ–NE; původně 27,90 Kč; jen supermarkety",
    "brand": "Kozel"
   },
   {
@@ -1783,7 +1783,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-08",
    "validity_text": "25. 11. – 8. 12.",
-   "note": "Clubcard cena; běžná cena 25,90 Kč; cena za 1 l s Clubcard 35,80 Kč; původně 25,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 25,90 Kč; jen hypermarkety",
    "brand": "Radegast"
   },
   {
@@ -1797,7 +1797,7 @@
    "valid_from": null,
    "valid_to": null,
    "validity_text": null,
-   "note": "Clubcard cena; původně 25,90 Kč; jen supermarkety",
+   "note": "s Clubcard; původně 25,90 Kč; jen supermarkety",
    "brand": "Radegast"
   },
   {
@@ -1825,7 +1825,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "záloha na láhev 3 Kč; původně 25,90 Kč; jen hypermarkety",
+   "note": "původně 25,90 Kč; jen hypermarkety",
    "brand": "Radegast"
   },
   {
@@ -1909,7 +1909,7 @@
    "valid_from": "2026-11-26",
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
-   "note": "světlý ležák; původně 24,90 Kč",
+   "note": "původně 24,90 Kč",
    "brand": "Budvar"
   },
   {
@@ -1937,7 +1937,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Clubcard cena; ochucené nealkoholické pivo, více druhů; původně 24,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 24,90 Kč; jen hypermarkety",
    "brand": "Birell"
   },
   {
@@ -1951,7 +1951,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "Sklo; záloha na láhev 3 Kč; neplatí pro HM Praha Máj Národní; původně 25,90 Kč; jen hypermarkety",
+   "note": "původně 25,90 Kč; jen hypermarkety",
    "brand": "Radegast"
   },
   {
@@ -1965,7 +1965,7 @@
    "valid_from": null,
    "valid_to": null,
    "validity_text": null,
-   "note": "s Clubcard; ochucené nealkoholické pivo, více druhů; původně 24,90 Kč; jen supermarkety",
+   "note": "s Clubcard; původně 24,90 Kč; jen supermarkety",
    "brand": "Birell"
   },
   {
@@ -1993,7 +1993,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "nealkoholické pivo, vybrané druhy; nejnižší cena za posledních 30 dní 18,90 Kč; původně 24,90 Kč; jen hypermarkety",
+   "note": "původně 24,90 Kč; jen hypermarkety",
    "brand": "Birell"
   },
   {
@@ -2077,7 +2077,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "Záloha na láhev 3 Kč. Sklo, světlý ležák.",
+   "note": null,
    "brand": "Radegast"
   },
   {
@@ -2091,7 +2091,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "záloha na láhev 3 Kč; původně 25,90 Kč; jen hypermarkety",
+   "note": "původně 25,90 Kč; jen hypermarkety",
    "brand": "Radegast"
   },
   {
@@ -2161,7 +2161,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "ochucené nealkoholické pivo, vybrané druhy; původně 69,90 Kč; jen hypermarkety",
+   "note": "původně 69,90 Kč; jen hypermarkety",
    "brand": "Birell"
   },
   {
@@ -2175,7 +2175,7 @@
    "valid_from": null,
    "valid_to": null,
    "validity_text": null,
-   "note": "Clubcard cena; plech, ležák; původně 29,90 Kč",
+   "note": "s Clubcard; původně 29,90 Kč",
    "brand": "Kozel"
   },
   {
@@ -2189,7 +2189,7 @@
    "valid_from": "2026-11-23",
    "valid_to": "2026-11-25",
    "validity_text": "23. 11. – 25. 11.",
-   "note": "1 ks = 21,86 Kč; Ušetřete 26%",
+   "note": null,
    "brand": "Radegast"
   },
   {
@@ -2245,7 +2245,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; nejnižší cena za posledních 30 dní 21,90 Kč; původně 29,90 Kč; jen hypermarkety",
+   "note": "původně 29,90 Kč; jen hypermarkety",
    "brand": "Radegast"
   },
   {
@@ -2259,7 +2259,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "světlý ležák; původně 29,90 Kč; jen supermarkety",
+   "note": "původně 29,90 Kč; jen supermarkety",
    "brand": "Radegast"
   },
   {
@@ -2287,7 +2287,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "záloha na láhev 7 Kč; původně 32,90 Kč; jen hypermarkety",
+   "note": "původně 32,90 Kč; jen hypermarkety",
    "brand": "Bernard"
   },
   {
@@ -2315,7 +2315,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "pivo silné, ochucené, světlé, pasterizované; nejnižší cena za posledních 30 dní 21,90 Kč; původně 34,90 Kč; jen hypermarkety",
+   "note": "původně 34,90 Kč; jen hypermarkety",
    "brand": "Desperados"
   },
   {
@@ -2413,7 +2413,7 @@
    "valid_from": "2026-11-20",
    "valid_to": "2026-11-22",
    "validity_text": "20. 11. – 22. 11.",
-   "note": "záloha na láhev 3 Kč; ▼ nejnižší cena za posledních 30 dní: 25,90 Kč; původně 31,90 Kč",
+   "note": "původně 31,90 Kč",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2427,7 +2427,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-11-24",
    "validity_text": "18. 11. – 24. 11.",
-   "note": "záloha na láhev 3 Kč; ▼ nejnižší cena za posledních 30 dní 25,90 Kč; původně 31,90 Kč; jen supermarkety",
+   "note": "původně 31,90 Kč; jen supermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2441,7 +2441,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "1 ks za 25,90 Kč, záloha na láhev 3 Kč, soutěž s výhrou; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2469,7 +2469,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "záloha na láhev 3 Kč; původně 23,90 Kč",
+   "note": "původně 23,90 Kč",
    "brand": null
   },
   {
@@ -2483,7 +2483,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "vybrané druhy, záloha na láhev 3 Kč; původně 25,90 Kč; jen hypermarkety",
+   "note": "původně 25,90 Kč; jen hypermarkety",
    "brand": null
   },
   {
@@ -2525,7 +2525,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; 0,5 l = 31,13 Kč; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Krušovice"
   },
   {
@@ -2543,20 +2543,6 @@
    "brand": "Budvar"
   },
   {
-   "name": "Birell extra Štavnatý (zelené jablko)",
-   "volume": "0,33 l",
-   "volume_l": 0.33,
-   "shop": "Tesco",
-   "chain": "Tesco",
-   "price": 21.9,
-   "price_per_l": 66.36,
-   "valid_from": "2026-11-11",
-   "valid_to": "2026-11-24",
-   "validity_text": "11. 11. – 24. 11.",
-   "note": "Pozor: nápoj Birell extra Štavnatý, nejde o pivo; s Clubcard: 66,36 Kč/l; původně 26,90 Kč; jen hypermarkety",
-   "brand": "Birell"
-  },
-  {
    "name": "Pilsner Urquell 8pack + krýgl",
    "volume": "8× 0,5 l",
    "volume_l": 4.0,
@@ -2567,7 +2553,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; záloha na láhev 3 Kč; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2581,7 +2567,7 @@
    "valid_from": "2026-10-27",
    "valid_to": "2027-01-10",
    "validity_text": "27. 10. – 10. 1.",
-   "note": "s Clubcard; záloha na láhev 56 Kč; původně 299,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 299,90 Kč; jen hypermarkety",
    "brand": "Bernard"
   },
   {
@@ -2595,7 +2581,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Heineken"
   },
   {
@@ -2609,7 +2595,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; záloha na láhev 3 Kč; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2665,7 +2651,7 @@
    "valid_from": "2026-10-27",
    "valid_to": "2027-01-10",
    "validity_text": "27. 10. – 10. 1.",
-   "note": "s Clubcard; záloha na láhev 24 Kč; původně 389,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 389,90 Kč; jen hypermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2693,7 +2679,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; neporazitelné; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Bernard"
   },
   {
@@ -2721,7 +2707,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "sváteční ležák; 0,5 l = 42,72 Kč; záloha na láhev 7 Kč; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Bernard"
   },
   {
@@ -2833,7 +2819,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlé výčepní pivo; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2875,7 +2861,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; 100 ml = 11,57 Kč; záloha na láhev 3 Kč; součástí 0,3 l ikonické sklo; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Budvar"
   },
   {
@@ -2903,7 +2889,7 @@
    "valid_from": "2026-10-27",
    "valid_to": "2027-01-10",
    "validity_text": "27. 10. – 10. 1.",
-   "note": "s Clubcard; záloha na láhev 18 Kč; původně 289,00 Kč",
+   "note": "s Clubcard; původně 289,00 Kč",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2917,7 +2903,7 @@
    "valid_from": "2026-10-27",
    "valid_to": "2027-01-10",
    "validity_text": "27. 10. – 10. 1.",
-   "note": "s Clubcard; záloha na láhev 18 Kč; původně 169,90 Kč; jen hypermarkety",
+   "note": "s Clubcard; původně 169,90 Kč; jen hypermarkety",
    "brand": "Primátor"
   },
   {
@@ -2931,7 +2917,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "svrchně kvasený stout; 100 ml = 15,08 Kč; součástí originální sklenice; původně 219,00 Kč; jen hypermarkety",
+   "note": "původně 219,00 Kč; jen hypermarkety",
    "brand": null
   },
   {
@@ -2959,7 +2945,7 @@
    "valid_from": "2026-10-27",
    "valid_to": "2027-01-10",
    "validity_text": "27. 10. – 10. 1.",
-   "note": "s Clubcard; cena za 100 ml 17,42 Kč; původně 299,90 Kč",
+   "note": "s Clubcard; původně 299,90 Kč",
    "brand": null
   },
   {
@@ -2987,7 +2973,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "světlý ležák; jen hypermarkety",
+   "note": "jen hypermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -3029,7 +3015,7 @@
    "valid_from": "2026-11-23",
    "valid_to": "2026-11-25",
    "validity_text": "23. 11. – 25. 11.",
-   "note": "dárkové balení, limitovaná edice",
+   "note": "dárkové balení",
    "brand": "Pilsner Urquell"
   },
   {
