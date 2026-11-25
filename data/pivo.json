@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-24",
- "count": 258,
+ "updated": "2026-11-25",
+ "count": 220,
  "sources": {
   "Kaufland": {
    "source": "přímo",
-   "count": 48
+   "count": 29
   },
   "Lidl": {
    "source": "přímo",
@@ -12,7 +12,7 @@
   },
   "Billa": {
    "source": "přímo",
-   "count": 102
+   "count": 99
   },
   "Tesco": {
    "source": "přímo",
@@ -20,15 +20,15 @@
   },
   "Globus": {
    "source": "přímo",
-   "count": 25
+   "count": 28
   },
   "Albert": {
    "source": "přímo",
-   "count": 70
+   "count": 65
   },
   "Penny": {
    "source": "záloha",
-   "count": 27
+   "count": 9
   },
   "COOP": {
    "source": "záloha",
@@ -51,20 +51,6 @@
    "brand": "Březňák"
   },
   {
-   "name": "Platan 11 – Pivo světlý ležák",
-   "volume": "0,5 l vratná láhev",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 9.9,
-   "price_per_l": 19.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 19,90",
-   "brand": "Platan"
-  },
-  {
    "name": "ARGUS 11 Bitter extra chmelený světlý ležák",
    "volume": "0,5 l",
    "volume_l": 0.5,
@@ -77,48 +63,6 @@
    "validity_text": "26. 11. – 29. 11.",
    "note": "původně 13,90 Kč",
    "brand": "Argus"
-  },
-  {
-   "name": "Staropramen 10 světlé výčepní pivo",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 9.9,
-   "price_per_l": 19.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 16,90 Kč; jen hypermarkety",
-   "brand": "Staropramen"
-  },
-  {
-   "name": "Braník světlé výčepní pivo",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 9.9,
-   "price_per_l": 19.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 14,90 Kč; jen supermarkety",
-   "brand": "Braník"
-  },
-  {
-   "name": "Budvar Výčepní",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 9.9,
-   "price_per_l": 19.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 17,90 Kč; jen supermarkety",
-   "brand": "Budvar"
   },
   {
    "name": "Staropramen 10",
@@ -135,20 +79,6 @@
    "brand": "Staropramen"
   },
   {
-   "name": "Pivo světlý ležák 11° Svijanský Máz Svijany",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 9.9,
-   "price_per_l": 19.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+3 Kč záloha na láhev",
-   "brand": "Svijany"
-  },
-  {
    "name": "Pivo světlé výčepní 10° Braník",
    "volume": "0.5 l",
    "volume_l": 0.5,
@@ -156,9 +86,9 @@
    "chain": "Penny",
    "price": 9.9,
    "price_per_l": 19.8,
-   "valid_from": "2026-11-25",
+   "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "st 25. 11. – út 1. 12.",
+   "validity_text": "platí do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Braník"
   },
@@ -177,60 +107,32 @@
    "brand": "Budvar"
   },
   {
-   "name": "Pivo světlý ležák Premium Staročech",
+   "name": "Pivo světlé výčepní 10° Pardál",
    "volume": "0.5 l",
    "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
+   "shop": "COOP",
+   "chain": "COOP",
    "price": 9.9,
    "price_per_l": 19.8,
    "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
+   "valid_to": "2026-12-08",
+   "validity_text": "platí do úterý 8. 12.",
    "note": "+3 Kč záloha na láhev",
-   "brand": null
+   "brand": "Pardál"
   },
   {
-   "name": "Braník – Pivo světlé výčepní",
-   "volume": "2 l PET láhev",
-   "volume_l": 2.0,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 39.9,
-   "price_per_l": 19.95,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": "Braník"
-  },
-  {
-   "name": "Braník světlé výčepní pivo",
+   "name": "Braník Pivo výčepní světlé 2,0l",
    "volume": "2 l",
-   "volume_l": 2.0,
-   "shop": "Albert",
-   "chain": "Albert",
+   "volume_l": "2",
+   "shop": "Billa",
+   "chain": "Billa",
    "price": 39.9,
    "price_per_l": 19.95,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 49,90 Kč; jen hypermarkety",
+   "valid_from": null,
+   "valid_to": null,
+   "validity_text": null,
+   "note": "původně 49,90 Kč",
    "brand": "Braník"
-  },
-  {
-   "name": "Zlatopramen",
-   "volume": "2 l",
-   "volume_l": 2.0,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 39.9,
-   "price_per_l": 19.95,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "jen supermarkety",
-   "brand": "Zlatopramen"
   },
   {
    "name": "Braník",
@@ -245,34 +147,6 @@
    "validity_text": "25. 11. – 1. 12.",
    "note": "původně 49,90 Kč; jen supermarkety",
    "brand": "Braník"
-  },
-  {
-   "name": "Svijanský Máz – Pivo světlý ležák",
-   "volume": "0,5 l vratná láhev",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 10.9,
-   "price_per_l": 21.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": "Svijany"
-  },
-  {
-   "name": "Zubr Grand 11 – Pivo světlý ležák",
-   "volume": "0,5 l vratná láhev",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 10.9,
-   "price_per_l": 21.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 17,90",
-   "brand": "Zubr"
   },
   {
    "name": "Bruncvík – Pivo polotmavý ležák",
@@ -317,20 +191,6 @@
    "brand": "Klášter"
   },
   {
-   "name": "Braník Světlý 0,5l",
-   "volume": "0,5 l",
-   "volume_l": "0.5",
-   "shop": "Billa",
-   "chain": "Billa",
-   "price": 10.9,
-   "price_per_l": 21.8,
-   "valid_from": null,
-   "valid_to": null,
-   "validity_text": null,
-   "note": "původně 14,90 Kč",
-   "brand": "Braník"
-  },
-  {
    "name": "Krušovice 10 sklo 0,5l",
    "volume": "0,5 l",
    "volume_l": "0.5",
@@ -373,34 +233,6 @@
    "brand": "Excelent"
   },
   {
-   "name": "Pivo světlé výčepní 10° Staropramen",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 10.9,
-   "price_per_l": 21.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+3 Kč záloha na láhev",
-   "brand": "Staropramen"
-  },
-  {
-   "name": "Staropramen 10 – Pivo světlé výčepní",
-   "volume": "10x0,5 l vratná láhev",
-   "volume_l": 5.0,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 109.9,
-   "price_per_l": 21.98,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 179,90",
-   "brand": "Staropramen"
-  },
-  {
    "name": "Braník světlý ležák",
    "volume": "2 l",
    "volume_l": 2.0,
@@ -441,20 +273,6 @@
    "validity_text": "25. 11. – 1. 12.",
    "note": "původně 54,90 Kč; jen hypermarkety",
    "brand": "Zlatopramen"
-  },
-  {
-   "name": "Bruncvík – Pivo světlé výčepní",
-   "volume": "0,5 l plech",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 11.9,
-   "price_per_l": 23.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": null
   },
   {
    "name": "Excelent 11 – Pivo světlý ležák",
@@ -569,6 +387,20 @@
    "brand": "Starobrno"
   },
   {
+   "name": "Svijanský Máz 11 % 0,5l",
+   "volume": "0,5 l",
+   "volume_l": "0.5",
+   "shop": "Billa",
+   "chain": "Billa",
+   "price": 11.9,
+   "price_per_l": 23.8,
+   "valid_from": null,
+   "valid_to": null,
+   "validity_text": null,
+   "note": "původně 19,90 Kč",
+   "brand": "Svijany"
+  },
+  {
    "name": "Staropramen Nealko pivo světlé 0,5l",
    "volume": "0,5 l",
    "volume_l": "0.5",
@@ -611,20 +443,6 @@
    "brand": "Staropramen"
   },
   {
-   "name": "Excelent 11",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 11.9,
-   "price_per_l": 23.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 19,90 Kč; jen supermarkety",
-   "brand": "Excelent"
-  },
-  {
    "name": "Zlatý Bažant",
    "volume": "0,5 l",
    "volume_l": 0.5,
@@ -660,9 +478,9 @@
    "chain": "Penny",
    "price": 11.9,
    "price_per_l": 23.8,
-   "valid_from": "2026-11-25",
+   "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "st 25. 11. – út 1. 12.",
+   "validity_text": "platí do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Zlatý Bažant"
   },
@@ -679,20 +497,6 @@
    "validity_text": "platí do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Budvar"
-  },
-  {
-   "name": "Velkopopovický Kozel – Pivo světlé výčepní",
-   "volume": "0,5 l vratná láhev",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 12.9,
-   "price_per_l": 25.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 16,90",
-   "brand": "Kozel"
   },
   {
    "name": "Zubr Gold – Pivo světlé výčepní",
@@ -751,6 +555,20 @@
    "brand": "Argus"
   },
   {
+   "name": "Velkopopovický Kozel 10 pivo výčepní světlé 500ml",
+   "volume": "0,5 l",
+   "volume_l": "0.5",
+   "shop": "Billa",
+   "chain": "Billa",
+   "price": 12.9,
+   "price_per_l": 25.8,
+   "valid_from": null,
+   "valid_to": null,
+   "validity_text": null,
+   "note": "původně 17,90 Kč",
+   "brand": "Kozel"
+  },
+  {
    "name": "Březňák pivo výčepní světlé 0,5l",
    "volume": "0,5 l",
    "volume_l": "0.5",
@@ -763,20 +581,6 @@
    "validity_text": null,
    "note": "původně 17,90 Kč",
    "brand": "Březňák"
-  },
-  {
-   "name": "Svijanský Máz 11 % 0,5l",
-   "volume": "0,5 l",
-   "volume_l": "0.5",
-   "shop": "Billa",
-   "chain": "Billa",
-   "price": 12.9,
-   "price_per_l": 25.8,
-   "valid_from": null,
-   "valid_to": null,
-   "validity_text": null,
-   "note": "původně 19,90 Kč",
-   "brand": "Svijany"
   },
   {
    "name": "Zubr Gold světlé výčepní pivo 0,5l",
@@ -849,6 +653,20 @@
    "brand": "Gambrinus"
   },
   {
+   "name": "Staropramen Nealko",
+   "volume": "0,5 l",
+   "volume_l": 0.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 12.9,
+   "price_per_l": 25.8,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 21,90 Kč; jen supermarkety",
+   "brand": "Staropramen"
+  },
+  {
    "name": "Pivo světlé výčepní 10° Velkopopovický Kozel",
    "volume": "0.5 l",
    "volume_l": 0.5,
@@ -856,9 +674,9 @@
    "chain": "Penny",
    "price": 12.9,
    "price_per_l": 25.8,
-   "valid_from": "2026-11-25",
+   "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "st 25. 11. – út 1. 12.",
+   "validity_text": "platí do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev, do vyprodání zásob",
    "brand": "Kozel"
   },
@@ -870,25 +688,11 @@
    "chain": "Penny",
    "price": 12.9,
    "price_per_l": 25.8,
-   "valid_from": "2026-11-25",
+   "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "st 25. 11. – út 1. 12.",
+   "validity_text": "platí do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev, do vyprodání zásob",
    "brand": "Zubr"
-  },
-  {
-   "name": "Pivo světlý ležák 11° Krušovice",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 12.9,
-   "price_per_l": 25.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+3 Kč záloha na láhev, do vyprodání zásob",
-   "brand": "Krušovice"
   },
   {
    "name": "Krušovice 12 – Pivo světlý ležák",
@@ -912,9 +716,9 @@
    "chain": "Penny",
    "price": 39.9,
    "price_per_l": 26.6,
-   "valid_from": "2026-11-25",
+   "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "st 25. 11. – út 1. 12.",
+   "validity_text": "platí do úterý 1. 12.",
    "note": "pet láhev",
    "brand": "Krušovice"
   },
@@ -931,34 +735,6 @@
    "validity_text": "25. 11. – 1. 12.",
    "note": "původně 129,90 Kč; jen hypermarkety",
    "brand": "Staropramen"
-  },
-  {
-   "name": "Primátor – Sváteční ležák 11° Multipack",
-   "volume": "8x0,5 l vratná láhev",
-   "volume_l": 4.0,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 109.9,
-   "price_per_l": 27.48,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": "Primátor"
-  },
-  {
-   "name": "Lobkowicz Premium Nealko – Nealkoholické pivo světlé",
-   "volume": "0,5 l plech",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 13.9,
-   "price_per_l": 27.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 19,90",
-   "brand": "Lobkowicz"
   },
   {
    "name": "Radegast 10 světlé výčepní pivo retro edice",
@@ -1031,20 +807,6 @@
    "brand": "Krušovice"
   },
   {
-   "name": "Gambrinus Patron 12 světlý ležák",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 13.9,
-   "price_per_l": 27.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 21,90 Kč; jen hypermarkety",
-   "brand": "Gambrinus"
-  },
-  {
    "name": "Svijanský Máz",
    "volume": "0,5 l",
    "volume_l": 0.5,
@@ -1087,32 +849,18 @@
    "brand": "Birell"
   },
   {
-   "name": "Gambrinus Patron 12",
+   "name": "Staropramen 12",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Albert",
    "chain": "Albert",
    "price": 13.9,
    "price_per_l": 27.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 21,90 Kč; jen supermarkety",
-   "brand": "Gambrinus"
-  },
-  {
-   "name": "Pivo světlé výčepní Rázná 10° Radegast",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 13.9,
-   "price_per_l": 27.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+3 Kč záloha na láhev",
-   "brand": "Radegast"
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 20,90 Kč; jen supermarkety",
+   "brand": "Staropramen"
   },
   {
    "name": "Pivo světlé výčepní Rázná 10° Radegast",
@@ -1171,20 +919,6 @@
    "brand": "Krušovice"
   },
   {
-   "name": "Gambrinus Patron 12 – Pivo světlý ležák",
-   "volume": "0,5 l vratná láhev",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 14.9,
-   "price_per_l": 29.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 22,90",
-   "brand": "Gambrinus"
-  },
-  {
    "name": "Braník – Pivo světlý ležák",
    "volume": "0,5 l plech",
    "volume_l": 0.5,
@@ -1197,6 +931,20 @@
    "validity_text": "25. 11. – 1. 12.",
    "note": null,
    "brand": "Braník"
+  },
+  {
+   "name": "Staropramen 12 pivo ležák světlý 0,5l",
+   "volume": "0,5 l",
+   "volume_l": "0.5",
+   "shop": "Billa",
+   "chain": "Billa",
+   "price": 14.9,
+   "price_per_l": 29.8,
+   "valid_from": null,
+   "valid_to": null,
+   "validity_text": null,
+   "note": "původně 20,90 Kč",
+   "brand": "Staropramen"
   },
   {
    "name": "Krušovice 12 sklo 0,5l",
@@ -1255,34 +1003,6 @@
    "brand": null
   },
   {
-   "name": "Pivo světlý ležák 11° Svijanský Máz Svijany",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 14.9,
-   "price_per_l": 29.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech",
-   "brand": "Svijany"
-  },
-  {
-   "name": "Pivo světlý ležák Original Budweiser Budvar",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 14.9,
-   "price_per_l": 29.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+3 Kč záloha na láhev, do vyprodání zásob",
-   "brand": "Budvar"
-  },
-  {
    "name": "Pivo světlý ležák 12° Patron Gambrinus",
    "volume": "0.5 l",
    "volume_l": 0.5,
@@ -1290,9 +1010,9 @@
    "chain": "Penny",
    "price": 14.9,
    "price_per_l": 29.8,
-   "valid_from": "2026-11-25",
+   "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "st 25. 11. – út 1. 12.",
+   "validity_text": "platí do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev, do vyprodání zásob",
    "brand": "Gambrinus"
   },
@@ -1311,34 +1031,6 @@
    "brand": "Gambrinus"
   },
   {
-   "name": "Staropramen Ležák – Pivo světlý ležák",
-   "volume": "0,5 l plech",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 15.9,
-   "price_per_l": 31.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 25,90",
-   "brand": "Staropramen"
-  },
-  {
-   "name": "Krušovice 11 – Pivo světlý ležák",
-   "volume": "0,5 l plech",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 15.9,
-   "price_per_l": 31.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 22,90",
-   "brand": "Krušovice"
-  },
-  {
    "name": "Svijanský Máz – Pivo světlý ležák",
    "volume": "0,5 l plech",
    "volume_l": 0.5,
@@ -1353,7 +1045,7 @@
    "brand": "Svijany"
   },
   {
-   "name": "Gambrinus Patron 12 pivo ležák světlý 0,5l",
+   "name": "Staropramen 10 pivo výčepní světlé 0,5l",
    "volume": "0,5 l",
    "volume_l": "0.5",
    "shop": "Billa",
@@ -1363,8 +1055,8 @@
    "valid_from": null,
    "valid_to": null,
    "validity_text": null,
-   "note": "původně 22,90 Kč",
-   "brand": "Gambrinus"
+   "note": "původně 21,90 Kč",
+   "brand": "Staropramen"
   },
   {
    "name": "Braník Pivo výčepní světlé 0,5l",
@@ -1381,7 +1073,7 @@
    "brand": "Braník"
   },
   {
-   "name": "Velkopopovický Kozel 11 pivo ležák světlý 500ml",
+   "name": "Staropramen Nealko pivo světlé 0,5l",
    "volume": "0,5 l",
    "volume_l": "0.5",
    "shop": "Billa",
@@ -1392,7 +1084,7 @@
    "valid_to": null,
    "validity_text": null,
    "note": "původně 20,90 Kč",
-   "brand": "Kozel"
+   "brand": "Staropramen"
   },
   {
    "name": "Velkopopovický Kozel 11",
@@ -1451,34 +1143,6 @@
    "brand": "Staropramen"
   },
   {
-   "name": "Velkopopovický Kozel 11",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 15.9,
-   "price_per_l": 31.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 19,90 Kč",
-   "brand": "Kozel"
-  },
-  {
-   "name": "Starobrno Medium světlý ležák",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 15.9,
-   "price_per_l": 31.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 23,90 Kč; jen hypermarkety",
-   "brand": "Starobrno"
-  },
-  {
    "name": "Krušovice 11",
    "volume": "0,5 l",
    "volume_l": 0.5,
@@ -1505,20 +1169,6 @@
    "validity_text": "11. 11. – 3. 1.",
    "note": "původně 24,90 Kč; jen hypermarkety",
    "brand": "Krušovice"
-  },
-  {
-   "name": "Staropramen 12",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 15.9,
-   "price_per_l": 31.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 25,90 Kč; jen supermarkety",
-   "brand": "Staropramen"
   },
   {
    "name": "Mustang Hořký 12",
@@ -1549,18 +1199,18 @@
    "brand": "Starobrno"
   },
   {
-   "name": "Pivo světlý ležák 11° Medium Velkopopovický Kozel",
-   "volume": "0.5 l",
+   "name": "Krušovice 12",
+   "volume": "0,5 l",
    "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
+   "shop": "Albert",
+   "chain": "Albert",
    "price": 15.9,
    "price_per_l": 31.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+3 Kč záloha na láhev",
-   "brand": "Kozel"
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 24,90 Kč; jen supermarkety",
+   "brand": "Krušovice"
   },
   {
    "name": "Pivo Velkopopovický Kozel",
@@ -1577,20 +1227,6 @@
    "brand": "Kozel"
   },
   {
-   "name": "Gambrinus Originál 10 pivo výčepní světlé 6 x 0,5l (3l)",
-   "volume": "3 l",
-   "volume_l": "3",
-   "shop": "Billa",
-   "chain": "Billa",
-   "price": 95.9,
-   "price_per_l": 31.97,
-   "valid_from": null,
-   "valid_to": null,
-   "validity_text": null,
-   "note": "původně 135,90 Kč",
-   "brand": "Gambrinus"
-  },
-  {
    "name": "Krušovice 12 světlý ležák",
    "volume": "8 x 0,5 l",
    "volume_l": 4.0,
@@ -1603,20 +1239,6 @@
    "validity_text": "23. 11. – 25. 11.",
    "note": null,
    "brand": "Krušovice"
-  },
-  {
-   "name": "Pivo světlý ležák Original Budweiser Budvar",
-   "volume": "8x 0.5 l",
-   "volume_l": 4.0,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 129.9,
-   "price_per_l": 32.48,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+24Kč záloha na láhve, do vyprodání zásob",
-   "brand": "Budvar"
   },
   {
    "name": "Radegast Rázná 10 6pack",
@@ -1759,34 +1381,6 @@
    "brand": "Kozel"
   },
   {
-   "name": "Velkopopovický Kozel 12 světlý ležák",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 16.9,
-   "price_per_l": 33.8,
-   "valid_from": "2026-11-20",
-   "valid_to": "2026-11-22",
-   "validity_text": "20. 11. – 22. 11.",
-   "note": "původně 27,90 Kč",
-   "brand": "Kozel"
-  },
-  {
-   "name": "Cool+ ochucené nealkoholické pivo",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 16.9,
-   "price_per_l": 33.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 25,90 Kč; jen hypermarkety",
-   "brand": null
-  },
-  {
    "name": "Gambrinus Patron 12",
    "volume": "0,5 l",
    "volume_l": 0.5,
@@ -1801,46 +1395,88 @@
    "brand": "Gambrinus"
   },
   {
-   "name": "Velkopopovický Kozel 12 světlý ležák 0,5 l",
+   "name": "Radegast Rázná 10",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Albert",
    "chain": "Albert",
    "price": 16.9,
    "price_per_l": 33.8,
-   "valid_from": "2026-11-20",
-   "valid_to": "2026-11-22",
-   "validity_text": "20. 11. – 22. 11.",
-   "note": "platí pouze PÁ–NE; původně 27,90 Kč; jen supermarkety",
-   "brand": "Kozel"
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 25,90 Kč; jen supermarkety",
+   "brand": "Radegast"
   },
   {
-   "name": "Velkopopovický Kozel 0,0 citrón",
+   "name": "Cool+ iso 0,0",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Albert",
    "chain": "Albert",
    "price": 16.9,
    "price_per_l": 33.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 25,90 Kč; jen supermarkety",
+   "brand": null
+  },
+  {
+   "name": "Mustang",
+   "volume": "0,5 l",
+   "volume_l": 0.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 16.9,
+   "price_per_l": 33.8,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 25,90 Kč; jen supermarkety",
+   "brand": null
+  },
+  {
+   "name": "Černá Barbora",
+   "volume": "0,5 l",
+   "volume_l": 0.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 16.9,
+   "price_per_l": 33.8,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 25,90 Kč; jen supermarkety",
+   "brand": null
+  },
+  {
+   "name": "Staropramen 11",
+   "volume": "0,5 l",
+   "volume_l": 0.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 16.9,
+   "price_per_l": 33.8,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
    "note": "původně 22,90 Kč; jen supermarkety",
-   "brand": "Kozel"
+   "brand": "Staropramen"
   },
   {
-   "name": "Pivo světlý ležák 12° Staropramen",
-   "volume": "0.5 l",
+   "name": "Krušovice Bohém",
+   "volume": "0,5 l",
    "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
+   "shop": "Albert",
+   "chain": "Albert",
    "price": 16.9,
    "price_per_l": 33.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech",
-   "brand": "Staropramen"
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 26,90 Kč; jen supermarkety",
+   "brand": "Krušovice"
   },
   {
    "name": "Pivo světlé výčepní 10° Staropramen",
@@ -1857,46 +1493,18 @@
    "brand": "Staropramen"
   },
   {
-   "name": "Pivo světlý ležák 12° Zlatý Bažant",
-   "volume": "8x 0.5 l",
-   "volume_l": 4.0,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 139.9,
-   "price_per_l": 34.98,
+   "name": "Gambrinus Originál 10 pivo výčepní světlé 6 x 0,5l (3l)",
+   "volume": "3 l",
+   "volume_l": "3",
+   "shop": "Billa",
+   "chain": "Billa",
+   "price": 106.9,
+   "price_per_l": 35.63,
    "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech",
-   "brand": "Zlatý Bažant"
-  },
-  {
-   "name": "Radegast Rázná 10 – Pivo světlé výčepní",
-   "volume": "0,5 l plech",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 17.9,
-   "price_per_l": 35.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 23,90",
-   "brand": "Radegast"
-  },
-  {
-   "name": "Budweiser Budvar/Budvar 33 – Pivo světlý ležák",
-   "volume": "0,5 l vratná láhev",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 17.9,
-   "price_per_l": 35.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 28,90",
-   "brand": "Budvar"
+   "valid_to": null,
+   "validity_text": null,
+   "note": "původně 135,90 Kč",
+   "brand": "Gambrinus"
   },
   {
    "name": "Birell – Nealkoholické pivo za studena chmelený",
@@ -1927,7 +1535,7 @@
    "brand": null
   },
   {
-   "name": "Staropramen 12 pivo ležák světlý 0,5l",
+   "name": "Velkopopovický Kozel 11 pivo ležák světlý 500ml",
    "volume": "0,5 l",
    "volume_l": "0.5",
    "shop": "Billa",
@@ -1937,8 +1545,8 @@
    "valid_from": null,
    "valid_to": null,
    "validity_text": null,
-   "note": "původně 25,90 Kč",
-   "brand": "Staropramen"
+   "note": "původně 26,90 Kč",
+   "brand": "Kozel"
   },
   {
    "name": "Birell Světlý nealkoholické pivo 0,5l",
@@ -1983,88 +1591,18 @@
    "brand": "Radegast"
   },
   {
-   "name": "Velkopopovický Kozel nealkoholické pivo",
+   "name": "Budweiser Budvar Original",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Albert",
    "chain": "Albert",
    "price": 17.9,
    "price_per_l": 35.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 22,90 Kč; jen hypermarkety",
-   "brand": "Kozel"
-  },
-  {
-   "name": "Radegast Ratar světlý ležák",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 17.9,
-   "price_per_l": 35.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 25,90 Kč; jen hypermarkety",
-   "brand": "Radegast"
-  },
-  {
-   "name": "Velkopopovický Kozel Nealko",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 17.9,
-   "price_per_l": 35.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 22,90 Kč; jen supermarkety",
-   "brand": "Kozel"
-  },
-  {
-   "name": "Starobrno Štatl 12",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 17.9,
-   "price_per_l": 35.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 24,90 Kč; jen supermarkety",
-   "brand": "Starobrno"
-  },
-  {
-   "name": "Radegast Ratar",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 17.9,
-   "price_per_l": 35.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 25,90 Kč; jen supermarkety",
-   "brand": "Radegast"
-  },
-  {
-   "name": "Pivo světlé výčepní 10° Velkopopovický Kozel",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 17.9,
-   "price_per_l": 35.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech",
-   "brand": "Kozel"
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 28,90 Kč; jen supermarkety",
+   "brand": "Budvar"
   },
   {
    "name": "Primátor – Medové pivo Multipack",
@@ -2079,20 +1617,6 @@
    "validity_text": "25. 11. – 26. 12.",
    "note": null,
    "brand": "Primátor"
-  },
-  {
-   "name": "Pivo světlý ležák Heineken",
-   "volume": "0.4 l",
-   "volume_l": 0.4,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 14.9,
-   "price_per_l": 37.25,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+3 Kč záloha na láhev, do vyprodání zásob",
-   "brand": "Heineken"
   },
   {
    "name": "Holba Šerák – Pivo světlý ležák",
@@ -2135,20 +1659,6 @@
    "validity_text": "26. 11. – 29. 11.",
    "note": "původně 24,90 Kč",
    "brand": "Budvar"
-  },
-  {
-   "name": "Gambrinus Originál 10 pivo výčepní světlé 500ml",
-   "volume": "0,5 l",
-   "volume_l": "0.5",
-   "shop": "Billa",
-   "chain": "Billa",
-   "price": 18.9,
-   "price_per_l": 37.8,
-   "valid_from": null,
-   "valid_to": null,
-   "validity_text": null,
-   "note": "původně 22,90 Kč",
-   "brand": "Gambrinus"
   },
   {
    "name": "Birell ochucený pomelo & grep, nealkoholické pivo",
@@ -2221,60 +1731,18 @@
    "brand": "Birell"
   },
   {
-   "name": "Pivo světlý ležák 11° Excelent",
-   "volume": "0.5 l",
+   "name": "Birell",
+   "volume": "0,5 l",
    "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
+   "shop": "Albert",
+   "chain": "Albert",
    "price": 18.9,
    "price_per_l": 37.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech, do vyprodání zásob",
-   "brand": "Excelent"
-  },
-  {
-   "name": "Pivo světlý ležák 12° Patron Gambrinus",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 18.9,
-   "price_per_l": 37.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech, do vyprodání zásob",
-   "brand": "Gambrinus"
-  },
-  {
-   "name": "Pivo prémiový ležák 450 Svijany",
-   "volume": "0.5 l",
-   "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 18.9,
-   "price_per_l": 37.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech",
-   "brand": "Svijany"
-  },
-  {
-   "name": "Radegast Ryze Hořká 12 – Pivo světlý ležák",
-   "volume": "0,5 l vratná láhev",
-   "volume_l": 0.5,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 19.9,
-   "price_per_l": 39.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": "Radegast"
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 24,90 Kč; jen supermarkety",
+   "brand": "Birell"
   },
   {
    "name": "Budweiser Budvar Original pivo ležák světlé 0,5l",
@@ -2319,18 +1787,18 @@
    "brand": "Radegast"
   },
   {
-   "name": "Pivo světlý ležák Ratar Radegast",
-   "volume": "0.5 l",
+   "name": "Heineken",
+   "volume": "0,5 l",
    "volume_l": 0.5,
-   "shop": "Penny Market",
-   "chain": "Penny",
+   "shop": "Albert",
+   "chain": "Albert",
    "price": 19.9,
    "price_per_l": 39.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "plech, do vyprodání zásob",
-   "brand": "Radegast"
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 29,90 Kč; jen supermarkety",
+   "brand": "Heineken"
   },
   {
    "name": "Pivo světlý ležák 12° Patron Gambrinus",
@@ -2387,6 +1855,20 @@
    "validity_text": null,
    "note": "s Clubcard; původně 29,90 Kč",
    "brand": "Kozel"
+  },
+  {
+   "name": "Radegast Temně hořká 12",
+   "volume": "0,5 l",
+   "volume_l": 0.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 20.9,
+   "price_per_l": 41.8,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 30,90 Kč; jen supermarkety",
+   "brand": "Radegast"
   },
   {
    "name": "RADEGAST Ryze hořká 12",
@@ -2455,7 +1937,7 @@
    "valid_from": "2026-11-11",
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
-   "note": "původně 29,90 Kč; jen hypermarkety",
+   "note": "původně 29,90 Kč",
    "brand": "Radegast"
   },
   {
@@ -2473,6 +1955,20 @@
    "brand": "Radegast"
   },
   {
+   "name": "Velkopopovický Kozel 11 světlý ležák, 6× 0,33 l, sklo, + záloha 18,-",
+   "volume": "6× 0,33 l",
+   "volume_l": 1.98,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 89.9,
+   "price_per_l": 45.4,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
+   "note": null,
+   "brand": "Kozel"
+  },
+  {
    "name": "Stella Artois Pivo ležák světlý 0,5l",
    "volume": "0,5 l",
    "volume_l": "0.5",
@@ -2485,20 +1981,6 @@
    "validity_text": null,
    "note": "původně 31,90 Kč",
    "brand": "Stella Artois"
-  },
-  {
-   "name": "Bernard Jantarový ležák",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 22.9,
-   "price_per_l": 45.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 32,90 Kč; jen hypermarkety",
-   "brand": "Bernard"
   },
   {
    "name": "Primátor Tchyně – Pivo IPA",
@@ -2515,20 +1997,6 @@
    "brand": "Primátor"
   },
   {
-   "name": "Budweiser Budvar Original pivo ležák světlé 0,5l",
-   "volume": "0,5 l",
-   "volume_l": "0.5",
-   "shop": "Billa",
-   "chain": "Billa",
-   "price": 23.9,
-   "price_per_l": 47.8,
-   "valid_from": null,
-   "valid_to": null,
-   "validity_text": null,
-   "note": "původně 29,90 Kč",
-   "brand": "Budvar"
-  },
-  {
    "name": "Desperados Original",
    "volume": "0,5 l",
    "volume_l": 0.5,
@@ -2543,6 +2011,20 @@
    "brand": "Desperados"
   },
   {
+   "name": "Desperados",
+   "volume": "0,5 l",
+   "volume_l": 0.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 23.9,
+   "price_per_l": 47.8,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 34,90 Kč; jen supermarkety",
+   "brand": "Desperados"
+  },
+  {
    "name": "Proud světlý ležák",
    "volume": "0,5 l",
    "volume_l": 0.5,
@@ -2550,10 +2032,10 @@
    "chain": "Albert",
    "price": 24.9,
    "price_per_l": 49.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 31,90 Kč; jen hypermarkety",
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 31,90 Kč; jen supermarkety",
    "brand": null
   },
   {
@@ -2571,18 +2053,18 @@
    "brand": null
   },
   {
-   "name": "Pivo světlý ležák 12° Keprník Holba - dárkové balení",
-   "volume": "6x 0.5 l",
-   "volume_l": 3.0,
-   "shop": "Penny Market",
-   "chain": "Penny",
-   "price": 149.9,
-   "price_per_l": 49.97,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": "+ sklo, +18 Kč záloha na láhve, do vyprodání zásob",
-   "brand": "Holba"
+   "name": "Budvar 33 světlý ležák, 6× 0,33 l, sklo, + záloha 18,-",
+   "volume": "6× 0,33 l",
+   "volume_l": 1.98,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 99.9,
+   "price_per_l": 50.45,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
+   "note": null,
+   "brand": "Budvar"
   },
   {
    "name": "Heineken světlý ležák, 6× 0,33 l, sklo, + záloha 18,-",
@@ -2592,25 +2074,11 @@
    "chain": "Globus",
    "price": 99.9,
    "price_per_l": 50.45,
-   "valid_from": "2026-10-27",
-   "valid_to": "2026-11-24",
-   "validity_text": "27. 10. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
    "note": null,
    "brand": "Heineken"
-  },
-  {
-   "name": "Budvar 33 světlý ležák, 6× 0,33 l, sklo, + záloha 18,-",
-   "volume": "6× 0,33 l",
-   "volume_l": 1.98,
-   "shop": "Globus",
-   "chain": "Globus",
-   "price": 99.9,
-   "price_per_l": 50.45,
-   "valid_from": "2026-10-27",
-   "valid_to": "2026-11-24",
-   "validity_text": "27. 10. – 24. 11.",
-   "note": null,
-   "brand": "Budvar"
   },
   {
    "name": "Proud – Pivo různé druhy",
@@ -2641,34 +2109,6 @@
    "brand": "Pilsner Urquell"
   },
   {
-   "name": "Pilsner Urquell světlý ležák",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 25.9,
-   "price_per_l": 51.8,
-   "valid_from": "2026-11-20",
-   "valid_to": "2026-11-22",
-   "validity_text": "20. 11. – 22. 11.",
-   "note": "původně 31,90 Kč",
-   "brand": "Pilsner Urquell"
-  },
-  {
-   "name": "Pilsner Urquell světlý ležák 0,5 l",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Albert",
-   "chain": "Albert",
-   "price": 25.9,
-   "price_per_l": 51.8,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 31,90 Kč; jen supermarkety",
-   "brand": "Pilsner Urquell"
-  },
-  {
    "name": "Pilsner Urquell 10pack",
    "volume": "10× 0,5 l",
    "volume_l": 5.0,
@@ -2679,7 +2119,7 @@
    "valid_from": "2026-11-18",
    "valid_to": "2026-12-01",
    "validity_text": "18. 11. – 1. 12.",
-   "note": "jen hypermarkety",
+   "note": null,
    "brand": "Pilsner Urquell"
   },
   {
@@ -2718,9 +2158,9 @@
    "chain": "Globus",
    "price": 109.9,
    "price_per_l": 55.51,
-   "valid_from": "2026-10-27",
-   "valid_to": "2026-11-24",
-   "validity_text": "27. 10. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
    "note": null,
    "brand": "Radegast"
   },
@@ -2749,7 +2189,7 @@
    "valid_from": "2026-11-25",
    "valid_to": "2026-12-01",
    "validity_text": "25. 11. – 1. 12.",
-   "note": "původně 25,90 Kč; jen hypermarkety",
+   "note": "původně 25,90 Kč",
    "brand": null
   },
   {
@@ -2781,18 +2221,32 @@
    "brand": "Radegast"
   },
   {
-   "name": "Pilsner Urquell Pivo ležák světlý 6 x 0,5l (3l)",
-   "volume": "3 l",
-   "volume_l": "3",
-   "shop": "Billa",
-   "chain": "Billa",
-   "price": 182.0,
-   "price_per_l": 60.67,
-   "valid_from": null,
-   "valid_to": null,
-   "validity_text": null,
-   "note": "původně 219,00 Kč",
-   "brand": "Pilsner Urquell"
+   "name": "Radegast Drsná 15",
+   "volume": "0,5 l",
+   "volume_l": 0.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 28.9,
+   "price_per_l": 57.8,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "jen supermarkety",
+   "brand": "Radegast"
+  },
+  {
+   "name": "Proud ležák, 6× 0,33 l, sklo, + záloha 18,-",
+   "volume": "6× 0,33 l",
+   "volume_l": 1.98,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 119.9,
+   "price_per_l": 60.56,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
+   "note": null,
+   "brand": null
   },
   {
    "name": "Krušovice Bohém",
@@ -2807,20 +2261,6 @@
    "validity_text": "11. 11. – 3. 1.",
    "note": "jen hypermarkety",
    "brand": "Krušovice"
-  },
-  {
-   "name": "Pivo světlý ležák Original Budweiser Budvar",
-   "volume": "5 l",
-   "volume_l": 5.0,
-   "shop": "COOP",
-   "chain": "COOP",
-   "price": 319.0,
-   "price_per_l": 63.8,
-   "valid_from": null,
-   "valid_to": "2026-11-24",
-   "validity_text": "dnes končí",
-   "note": null,
-   "brand": "Budvar"
   },
   {
    "name": "Pilsner Urquell 8pack + krýgl",
@@ -2865,6 +2305,34 @@
    "brand": "Bernard"
   },
   {
+   "name": "Pilsner Urquell 6pack",
+   "volume": "6× 0,33 l",
+   "volume_l": 1.98,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 145.0,
+   "price_per_l": 73.3,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 169,00 Kč; jen supermarkety",
+   "brand": "Pilsner Urquell"
+  },
+  {
+   "name": "Pilsner Urquell světlý ležák, 6× 0,33 l, sklo, + záloha 18,-",
+   "volume": "6× 0,33 l",
+   "volume_l": 1.98,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 145.9,
+   "price_per_l": 73.69,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
+   "note": null,
+   "brand": "Pilsner Urquell"
+  },
+  {
    "name": "Heineken",
    "volume": "5 l",
    "volume_l": 5.0,
@@ -2890,6 +2358,20 @@
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
    "note": "jen hypermarkety",
+   "brand": "Pilsner Urquell"
+  },
+  {
+   "name": "Pilsner Urquell 7pack + gobletka",
+   "volume": "7× 0,5 l",
+   "volume_l": 3.5,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 259.0,
+   "price_per_l": 74,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "jen supermarkety",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2970,9 +2452,9 @@
    "chain": "Globus",
    "price": 229.9,
    "price_per_l": 76.63,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
+   "valid_from": "2026-11-11",
+   "valid_to": "2026-12-31",
+   "validity_text": "11. 11. – 31. 12.",
    "note": "původně 299,90 Kč",
    "brand": "Pilsner Urquell"
   },
@@ -3017,20 +2499,6 @@
    "validity_text": "11. 11. – 3. 1.",
    "note": "jen hypermarkety",
    "brand": "Bernard"
-  },
-  {
-   "name": "Corona Extra – Pivo světlý ležák",
-   "volume": "0,33 l láhev",
-   "volume_l": 0.33,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 29.9,
-   "price_per_l": 90.61,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": "Corona"
   },
   {
    "name": "Corona Extra",
@@ -3087,20 +2555,6 @@
    "validity_text": "11. 11. – 31. 12.",
    "note": "původně 329,90 Kč",
    "brand": "Budvar"
-  },
-  {
-   "name": "Guinnnes Stout Draught – Pivo svrchně kvašené tmavé",
-   "volume": "0,44 l plech",
-   "volume_l": 0.44,
-   "shop": "Kaufland",
-   "chain": "Kaufland",
-   "price": 44.9,
-   "price_per_l": 102.05,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 69,90",
-   "brand": null
   },
   {
    "name": "Budějovický Budvar světlý ležák, dárkové balení, 5× 0,33 l",
@@ -3199,20 +2653,6 @@
    "validity_text": "11. 11. – 3. 1.",
    "note": "jen hypermarkety",
    "brand": "Budvar"
-  },
-  {
-   "name": "Pilsner Urquell světlý ležák, 6× 0,33 l, + krýgl, , + záloha 18,-",
-   "volume": "6× 0,33 l",
-   "volume_l": 1.98,
-   "shop": "Globus",
-   "chain": "Globus",
-   "price": 229.9,
-   "price_per_l": 116.11,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "původně 289,90 Kč; neplatí v: Praha-Štěrboholy",
-   "brand": "Pilsner Urquell"
   },
   {
    "name": "Pilsner Urquell – Pivo dárkové balení",
@@ -3432,9 +2872,9 @@
    "chain": "Penny",
    "price": 149.9,
    "price_per_l": 299.8,
-   "valid_from": "2026-11-25",
+   "valid_from": null,
    "valid_to": "2026-12-08",
-   "validity_text": "st 25. 11. – út 8. 12.",
+   "validity_text": "platí do úterý 8. 12.",
    "note": "+ krýgl, +18 Kč záloha na láhve, do vyprodání zásob",
    "brand": "Zubr"
   },
@@ -3453,74 +2893,32 @@
    "brand": null
   },
   {
-   "name": "Braník světlé výčepní pivo",
-   "volume": null,
-   "volume_l": null,
-   "shop": "Globus",
-   "chain": "Globus",
-   "price": 9.9,
-   "price_per_l": null,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": "Braník"
-  },
-  {
-   "name": "Budvar světlé výčepní pivo",
+   "name": "Svijanský Máz světlý ležák",
    "volume": null,
    "volume_l": null,
    "shop": "Globus",
    "chain": "Globus",
    "price": 10.9,
    "price_per_l": null,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": null,
-   "brand": "Budvar"
-  },
-  {
-   "name": "Svijanská desítka světlé výčepní pivo",
-   "volume": null,
-   "volume_l": null,
-   "shop": "Globus",
-   "chain": "Globus",
-   "price": 10.9,
-   "price_per_l": null,
-   "valid_from": "2026-11-11",
-   "valid_to": "2026-11-24",
-   "validity_text": "11. 11. – 24. 11.",
-   "note": null,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-01",
+   "validity_text": "25. 11. – 1. 12.",
+   "note": "s kartou Globus Bonus; neplatí v: Praha-Štěrboholy",
    "brand": "Svijany"
   },
   {
-   "name": "Holba Šerák světlý ležák",
+   "name": "Velkopopovický Kozel světlé výčepní pivo",
    "volume": null,
    "volume_l": null,
    "shop": "Globus",
    "chain": "Globus",
    "price": 12.9,
    "price_per_l": null,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
-   "note": "s kartou Globus Bonus",
-   "brand": "Holba"
-  },
-  {
-   "name": "Zubr Grand světlý ležák",
-   "volume": null,
-   "volume_l": null,
-   "shop": "Globus",
-   "chain": "Globus",
-   "price": 13.9,
-   "price_per_l": null,
-   "valid_from": "2026-11-11",
-   "valid_to": "2026-11-24",
-   "validity_text": "11. 11. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-08",
+   "validity_text": "25. 11. – 8. 12.",
    "note": null,
-   "brand": "Zubr"
+   "brand": "Kozel"
   },
   {
    "name": "Rychtář Premium světlý ležák",
@@ -3530,53 +2928,137 @@
    "chain": "Globus",
    "price": 14.9,
    "price_per_l": null,
-   "valid_from": "2026-10-27",
-   "valid_to": "2026-11-24",
-   "validity_text": "27. 10. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
    "note": null,
    "brand": "Rychtář"
   },
   {
-   "name": "Velkopopovický Kozel 11 světlý, řezaný, černý",
+   "name": "Cool 0,0 % nealkoholické ochucené pivo, různé druhy, plech",
+   "volume": null,
+   "volume_l": null,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 14.9,
+   "price_per_l": null,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-01",
+   "validity_text": "25. 11. – 1. 12.",
+   "note": "původně 16,90 Kč; neplatí v: Praha-Štěrboholy",
+   "brand": null
+  },
+  {
+   "name": "Krušovice Bohém světlý ležák, sklo",
+   "volume": null,
+   "volume_l": null,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 14.9,
+   "price_per_l": null,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-01",
+   "validity_text": "25. 11. – 1. 12.",
+   "note": "neplatí v: Praha-Štěrboholy",
+   "brand": "Krušovice"
+  },
+  {
+   "name": "Lobkowicz Premium světlý ležák",
    "volume": null,
    "volume_l": null,
    "shop": "Globus",
    "chain": "Globus",
    "price": 15.9,
    "price_per_l": null,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
    "note": null,
-   "brand": "Kozel"
+   "brand": "Lobkowicz"
   },
   {
-   "name": "Radegast Ratar světlý ležák",
+   "name": "Staropramen 12 světlý ležák, plech",
    "volume": null,
    "volume_l": null,
    "shop": "Globus",
    "chain": "Globus",
-   "price": 18.9,
+   "price": 15.9,
    "price_per_l": null,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-01",
+   "validity_text": "25. 11. – 1. 12.",
+   "note": "původně 17,90 Kč; neplatí v: Praha-Štěrboholy",
+   "brand": "Staropramen"
+  },
+  {
+   "name": "Heineken světlý ležák",
+   "volume": null,
+   "volume_l": null,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 16.9,
+   "price_per_l": null,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
    "note": null,
+   "brand": "Heineken"
+  },
+  {
+   "name": "Birell nealkoholické pivo neochucené, různé druhy, plech",
+   "volume": null,
+   "volume_l": null,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 17.9,
+   "price_per_l": null,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-08",
+   "validity_text": "25. 11. – 8. 12.",
+   "note": null,
+   "brand": "Birell"
+  },
+  {
+   "name": "Radegast Ryze hořká 12 světlý ležák, plech",
+   "volume": null,
+   "volume_l": null,
+   "shop": "Globus",
+   "chain": "Globus",
+   "price": 21.9,
+   "price_per_l": null,
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-01",
+   "validity_text": "25. 11. – 1. 12.",
+   "note": "neplatí v: Praha-Štěrboholy",
    "brand": "Radegast"
   },
   {
-   "name": "Pilsner Urquell světlý ležák",
+   "name": "Corona Extra",
+   "volume": "330 ml",
+   "volume_l": null,
+   "shop": "Albert",
+   "chain": "Albert",
+   "price": 29.9,
+   "price_per_l": null,
+   "valid_from": "2026-11-11",
+   "valid_to": "2027-01-03",
+   "validity_text": "11. 11. – 3. 1.",
+   "note": "původně 42,90 Kč; jen supermarkety",
+   "brand": "Corona"
+  },
+  {
+   "name": "Braník světlé výčepní pivo, PET",
    "volume": null,
    "volume_l": null,
    "shop": "Globus",
    "chain": "Globus",
-   "price": 25.9,
+   "price": 39.9,
    "price_per_l": null,
-   "valid_from": "2026-11-18",
-   "valid_to": "2026-11-24",
-   "validity_text": "18. 11. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-08",
+   "validity_text": "25. 11. – 8. 12.",
    "note": null,
-   "brand": "Pilsner Urquell"
+   "brand": "Braník"
   },
   {
    "name": "Birell ochucený, různé druhy , plech",
@@ -3586,25 +3068,11 @@
    "chain": "Globus",
    "price": 54.9,
    "price_per_l": null,
-   "valid_from": "2026-10-27",
-   "valid_to": "2026-11-24",
-   "validity_text": "27. 10. – 24. 11.",
+   "valid_from": "2026-11-25",
+   "valid_to": "2026-12-31",
+   "validity_text": "25. 11. – 31. 12.",
    "note": null,
    "brand": "Birell"
-  },
-  {
-   "name": "Globus - Slavíme 30 let díky vám! světlý ležák, soudek",
-   "volume": null,
-   "volume_l": null,
-   "shop": "Globus",
-   "chain": "Globus",
-   "price": 279.9,
-   "price_per_l": null,
-   "valid_from": "2026-10-27",
-   "valid_to": "2026-11-24",
-   "validity_text": "27. 10. – 24. 11.",
-   "note": null,
-   "brand": null
   },
   {
    "name": "Svijany světlé silné nefiltrované pivo, džbán",
