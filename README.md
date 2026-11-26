@@ -17,6 +17,8 @@ Běží na https://levne.pitpivo.cz/.
      (`scraper/chains/leaflet_ai.py`). Výsledky se cachují podle ID letáku
      (`data/cache/<řetězec>/`), API se tak volá jen pro nové letáky
      (řádově jednotky Kč týdně).
+   - Každou stránku letáku zpracuje **LangGraph pipeline**
+     (`scraper/chains/leaflet_graph.py`), viz níže.
    - **Záložní zdroj** (`scraper/fallback.py`) doplňuje řetězce bez
      použitelného přímého zdroje (Penny, COOP) a zastupuje řetězec, jehož
      přímý scraper selže. Jeho implementace není součástí repozitáře; bez ní
@@ -57,6 +59,59 @@ Běží na https://levne.pitpivo.cz/.
 
 Prodejnové nabídky (Kaufland, Tesco, Globus, COOP) se vážou na lokalitu
 `LOCALITY` v `scraper/chains/common.py`.
+
+## Vytěžování letáků: LangGraph pipeline
+
+Jedno volání modelu občas přečte cenu špatně (cena za kus vs. za balení,
+cena za litr od jiné nabídky, původní cena nižší než akční). Stránka
+letáku proto prochází grafem, který výsledek kontroluje a opravuje:
+
+```mermaid
+graph TD;
+  START([start]) --> extract
+  extract --> validate
+  validate -. bez problémů .-> finish
+  validate -. problémy, pokus < 2 .-> retry --> extract
+  validate -. stále problémy .-> escalate --> extract
+  validate -. ani silnější model .-> repair --> finish
+  finish --> END([konec])
+```
+
+- **extract**: Claude Haiku 5.5 vrátí nabídky jako strukturovaný JSON.
+- **validate**: deterministická pravidla bez volání modelu: rozsah ceny,
+  cena za litr odpovídá ceně a objemu (tolerance 12 %), původní cena je
+  vyšší než akční, platnost od ≤ do, a jestli jde o pivo (název bez
+  cideru, sklenic apod., cena nejvýš 200 Kč/l).
+- **retry**: model dostane svou předchozí odpověď a seznam problémů
+  a odpoví znovu.
+- **escalate**: jeden pokus silnějším modelem (`LEAFLET_STRONG_MODEL`,
+  výchozí `claude-sonnet-5-5`, prázdná hodnota eskalaci vypne).
+- **repair**: co se neopravilo, opraví pravidla (nesmyslná cena nebo ne-pivo → nabídka
+  zahozena, nesedící cena za litr → dopočítá se z objemu) a zapíše se do
+  fronty k ruční kontrole `data/review/<datum>.json`.
+
+Stránka bez problémů stojí jedno volání jako dřív, nejhorší případ jsou
+3 volání. Na konci běhu scraper vypíše volání a tokeny podle modelu.
+`LEAFLET_PIPELINE=legacy` vrátí původní jedno volání bez kontroly.
+
+### Evaluace
+
+Zlatá sada jsou ručně ověřené stránky letáků (obrázek + `.json` s nabídkami
+a `"verified": true`). Obrázky letáků nejsou ve veřejném repozitáři: sada
+žije v soukromém repozitáři (`GOLDEN_REPO` + `GOLDEN_TOKEN`) a workflow
+**Evaluace letáků** (`.github/workflows/eval.yml`, ruční spuštění) v režimu
+`draft` do něj uloží návrh z aktuálního letáku Albertu, v režimu `eval`
+vypíše srovnání legacy a graph do Job summary. Lokálně se složka zadává
+proměnnou `GOLDEN_DIR` (výchozí `scraper/eval/golden/`).
+
+```bash
+pip install -r scraper/requirements-dev.txt
+python scraper/eval/build_golden.py --albert --max-pages 30  # návrhy od silnějšího modelu
+# zkontrolovat a opravit golden/*.json proti obrázkům, nastavit "verified": true
+python scraper/eval/run_eval.py          # legacy vs. graph: precision, recall,
+                                         # shoda polí, volání a tokeny
+pytest scraper/tests                     # větvení grafu s falešným klientem, bez API
+```
 
 ## Lokální spuštění
 

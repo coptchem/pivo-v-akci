@@ -76,6 +76,8 @@ def main():
     for chain, st in status.items():
         print(f"  {chain}: {st['source']}, {st['count']} akcí")
 
+    write_leaflet_report(today)
+
     if not result:
         print("Nenalezeny žádné akce – data se nepřepisují.", file=sys.stderr)
         sys.exit(1)
@@ -94,6 +96,29 @@ def main():
     (DATA_DIR / "history" / f"{today.isoformat()}.json").write_text(
         text, encoding="utf-8")
     print(f"\nUloženo {len(result)} akcí do {out}")
+
+
+def write_leaflet_report(today):
+    """Usage Claude API a fronta k ruční kontrole z LangGraph pipeline letáků."""
+    if "chains.leaflet_graph" not in sys.modules:
+        return  # žádný nový leták, graf neběžel
+    review, calls = sys.modules["chains.leaflet_graph"].drain_report()
+    if calls:
+        per_model = {}
+        for c in calls:
+            m = per_model.setdefault(c["model"], [0, 0, 0])
+            m[0] += 1
+            m[1] += c["input_tokens"]
+            m[2] += c["output_tokens"]
+        print("Claude API (model: volání, vstupní / výstupní tokeny):")
+        for model, (n, tin, tout) in per_model.items():
+            print(f"  {model}: {n}, {tin} / {tout}")
+    if review:
+        out = DATA_DIR / "review" / f"{today.isoformat()}.json"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(review, ensure_ascii=False, indent=1),
+                       encoding="utf-8")
+        print(f"K ruční kontrole: {len(review)} záznamů v {out}")
 
 
 if __name__ == "__main__":
