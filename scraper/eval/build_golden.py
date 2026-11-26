@@ -29,7 +29,7 @@ from chains.leaflet_graph import STRONG_MODEL  # noqa: E402
 # GOLDEN_DIR: složka se zlatou sadou (v CI checkout soukromého repa)
 GOLDEN = Path(os.environ.get("GOLDEN_DIR")
               or Path(__file__).resolve().parent / "golden")
-EMPTY_PAGES = 3
+EMPTY_PAGES = 5   # negativní příklady v celé sadě
 
 
 def albert_pdfs(limit):
@@ -62,15 +62,16 @@ def main():
     client = leaflet_ai.make_client()
     year = date.today().year
     GOLDEN.mkdir(exist_ok=True)
+    empty = len([p for p in GOLDEN.glob("*.json")
+                 if not json.loads(p.read_text(encoding="utf-8"))["offers"]])
     for chain, leaflet_id, pdf in sources:
-        empty = 0
         pages = leaflet_ai.render_pdf(pdf)[:args.max_pages]
+        print(f"{chain} leták {leaflet_id}: {len(pages)} stránek")
         for n, jpeg in enumerate(pages, 1):
             page_id = f"{chain.lower()}-{leaflet_id}-p{n:02d}"
             existing = GOLDEN / f"{page_id}.json"
-            if existing.exists() and json.loads(
-                    existing.read_text(encoding="utf-8")).get("verified"):
-                continue  # ověřenou stránku nepřepisovat (a neplatit za ni)
+            if existing.exists():
+                continue  # už v sadě: nepřepisovat (ani neplatit znovu)
             offers, stop, _ = leaflet_ai.request_offers(
                 client, leaflet_ai.page_messages(jpeg, chain, year),
                 model=STRONG_MODEL, effort="medium")

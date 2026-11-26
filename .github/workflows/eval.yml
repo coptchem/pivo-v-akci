@@ -17,9 +17,12 @@ on:
         type: choice
         options: [eval, draft]
         default: eval
+      leaflets:
+        description: "draft: kolik aktuálních letáků Albertu projít"
+        default: "10"
       max_pages:
-        description: "draft: nejvýš stránek z letáku"
-        default: "30"
+        description: "draft: nejvýš stránek z jednoho letáku"
+        default: "60"
 
 permissions:
   contents: read
@@ -55,10 +58,11 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           PROXY_URL: ${{ secrets.PROXY_URL }}
+          LEAFLETS: ${{ inputs.leaflets }}
           MAX_PAGES: ${{ inputs.max_pages }}
         run: |
           mkdir -p "$GOLDEN_DIR"
-          python scraper/eval/build_golden.py --albert --max-pages "$MAX_PAGES"
+          python scraper/eval/build_golden.py --albert --leaflets "$LEAFLETS" --max-pages "$MAX_PAGES"
 
       - name: Uložení návrhu do soukromého repozitáře
         if: inputs.mode == 'draft' && vars.GOLDEN_REPO != ''
