@@ -92,6 +92,11 @@ graph TD;
 
 Stránka bez problémů stojí jedno volání jako dřív, nejhorší případ jsou
 3 volání. Na konci běhu scraper vypíše volání a tokeny podle modelu.
+Spotřeba se ukládá po dnech do `data/usage/<datum>.json` (řetězec, model,
+stránky, volání, tokeny). Workflow **Týdenní souhrn nákladů**
+(`.github/workflows/cost-report.yml`, každé pondělí ráno) z nich spočítá
+cenu podle ceníku v `scraper/usage.py`, přepočte ji kurzem ČNB na Kč
+a pošle e-mailem na `REPORT_TO`. Je to odhad z tokenů, ne faktura.
 `LEAFLET_PIPELINE=legacy` vrátí původní jedno volání bez kontroly.
 
 ### Evaluace
@@ -136,6 +141,7 @@ Secrets (Settings → Secrets and variables → Actions → Secrets):
 | ANTHROPIC_API_KEY | extrakce letáků (Albert, Lidl, Tesco) přes Claude API |
 | FALLBACK_SOURCE_B64 | volitelný záložní zdroj (base64 souboru `scraper/private/fallback_source.py`) |
 | SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS | odesílání upozornění (465 = SSL, jinak STARTTLS) |
+| REPORT_TO | e-mail pro týdenní souhrn nákladů (adresa se do logů nevypisuje) |
 | EXPORT_TOKEN | tajný token (min. 32 znaků) pro `api/export.php`; deploy z něj generuje `api/config.php` |
 
 Variables (záložka Variables – nejsou tajné):

@@ -153,8 +153,9 @@ def build_graph(client):
         offers, stop, usage = leaflet_ai.request_offers(
             client, messages, model=state["model"],
             effort="low" if state["model"] == BASE_MODEL else "medium")
-        update = {"attempts": state.get("attempts", 0) + 1,
-                  "messages": messages, "calls": [usage]}
+        attempt = state.get("attempts", 0) + 1
+        usage = {**usage, "chain": state["chain"], "attempt": attempt}
+        update = {"attempts": attempt, "messages": messages, "calls": [usage]}
         if offers is None:
             update["offers"] = []
             update["issues"] = [(None, "stop",

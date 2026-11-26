@@ -1,0 +1,34 @@
+name: Týdenní souhrn nákladů
+
+# Každé pondělí po ranním scrapingu (3:17 UTC) sečte spotřebu Claude API
+# za posledních 7 dní (data/usage/) a pošle ji e-mailem na REPORT_TO.
+on:
+  schedule:
+    - cron: "43 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalace závislostí
+        run: pip install requests
+
+      - name: Souhrn nákladů
+        env:
+          REPORT_TO: ${{ secrets.REPORT_TO }}
+          MAIL_FROM: ${{ vars.MAIL_FROM }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: python scraper/cost_report.py

@@ -22,6 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import fallback  # noqa: E402
+import usage  # noqa: E402
 from chains import SCRAPERS  # noqa: E402
 from chains.brands import brand_of  # noqa: E402
 
@@ -113,6 +114,7 @@ def write_leaflet_report(today):
         print("Claude API (model: volání, vstupní / výstupní tokeny):")
         for model, (n, tin, tout) in per_model.items():
             print(f"  {model}: {n}, {tin} / {tout}")
+        usage.record(DATA_DIR, today, calls)
     if review:
         out = DATA_DIR / "review" / f"{today.isoformat()}.json"
         out.parent.mkdir(parents=True, exist_ok=True)
