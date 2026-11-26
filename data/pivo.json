@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-25",
- "count": 220,
+ "updated": "2026-11-26",
+ "count": 213,
  "sources": {
   "Kaufland": {
    "source": "přímo",
@@ -8,11 +8,11 @@
   },
   "Lidl": {
    "source": "přímo",
-   "count": 15
+   "count": 8
   },
   "Billa": {
    "source": "přímo",
-   "count": 99
+   "count": 102
   },
   "Tesco": {
    "source": "přímo",
@@ -88,7 +88,7 @@
    "price_per_l": 19.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Braník"
   },
@@ -116,7 +116,7 @@
    "price_per_l": 19.8,
    "valid_from": null,
    "valid_to": "2026-12-08",
-   "validity_text": "platí do úterý 8. 12.",
+   "validity_text": "do úterý 8. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Pardál"
   },
@@ -233,20 +233,6 @@
    "brand": "Excelent"
   },
   {
-   "name": "Braník světlý ležák",
-   "volume": "2 l",
-   "volume_l": 2.0,
-   "shop": "Lidl",
-   "chain": "Lidl",
-   "price": 44.9,
-   "price_per_l": 22.45,
-   "valid_from": "2026-11-23",
-   "valid_to": "2026-11-25",
-   "validity_text": "23. 11. – 25. 11.",
-   "note": null,
-   "brand": "Braník"
-  },
-  {
    "name": "Braník 11 Světlý ležák",
    "volume": "2 l",
    "volume_l": 2.0,
@@ -314,20 +300,6 @@
    "valid_to": "2026-11-29",
    "validity_text": "26. 11. – 29. 11.",
    "note": "s Lidl Plus; původně 16,90 Kč",
-   "brand": "Argus"
-  },
-  {
-   "name": "ARGUS 12 Dark",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Lidl",
-   "chain": "Lidl",
-   "price": 11.9,
-   "price_per_l": 23.8,
-   "valid_from": "2026-11-23",
-   "valid_to": "2026-11-25",
-   "validity_text": "23. 11. – 25. 11.",
-   "note": "původně 16,90 Kč",
    "brand": "Argus"
   },
   {
@@ -480,7 +452,7 @@
    "price_per_l": 23.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Zlatý Bažant"
   },
@@ -494,7 +466,7 @@
    "price_per_l": 23.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Budvar"
   },
@@ -676,7 +648,7 @@
    "price_per_l": 25.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev, do vyprodání zásob",
    "brand": "Kozel"
   },
@@ -690,7 +662,7 @@
    "price_per_l": 25.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev, do vyprodání zásob",
    "brand": "Zubr"
   },
@@ -718,7 +690,7 @@
    "price_per_l": 26.6,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "pet láhev",
    "brand": "Krušovice"
   },
@@ -735,20 +707,6 @@
    "validity_text": "25. 11. – 1. 12.",
    "note": "původně 129,90 Kč; jen hypermarkety",
    "brand": "Staropramen"
-  },
-  {
-   "name": "Radegast 10 světlé výčepní pivo retro edice",
-   "volume": "0,5 l",
-   "volume_l": 0.5,
-   "shop": "Lidl",
-   "chain": "Lidl",
-   "price": 13.9,
-   "price_per_l": 27.8,
-   "valid_from": "2026-11-23",
-   "valid_to": "2026-11-25",
-   "validity_text": "23. 11. – 25. 11.",
-   "note": null,
-   "brand": "Radegast"
   },
   {
    "name": "Hostan Hradní pivo světlý ležák 0,5l",
@@ -793,7 +751,7 @@
    "brand": "Staropramen"
   },
   {
-   "name": "Krušovice Originál 10",
+   "name": "Krušovice Original 10",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Tesco",
@@ -872,12 +830,12 @@
    "price_per_l": 27.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev",
    "brand": "Radegast"
   },
   {
-   "name": "Krušovice 0,5 l plech, dva druhy",
+   "name": "Krušovice 0,5 l plech",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Tesco",
@@ -1012,7 +970,7 @@
    "price_per_l": 29.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "+3 Kč záloha na láhev, do vyprodání zásob",
    "brand": "Gambrinus"
   },
@@ -1101,7 +1059,7 @@
    "brand": "Kozel"
   },
   {
-   "name": "Staropramen Cool 0,0 Grep",
+   "name": "Staropramen Cool ochucené nealkoholické pivo, více druhů",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Tesco",
@@ -1129,7 +1087,7 @@
    "brand": "Gambrinus"
   },
   {
-   "name": "Staropramen Cool",
+   "name": "Staropramen Cool nealkoholické pivo",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Tesco",
@@ -1222,23 +1180,9 @@
    "price_per_l": 31.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "vybrané druhy, +3 Kč záloha na láhev",
    "brand": "Kozel"
-  },
-  {
-   "name": "Krušovice 12 světlý ležák",
-   "volume": "8 x 0,5 l",
-   "volume_l": 4.0,
-   "shop": "Lidl",
-   "chain": "Lidl",
-   "price": 129.9,
-   "price_per_l": 32.48,
-   "valid_from": "2026-11-23",
-   "valid_to": "2026-11-25",
-   "validity_text": "23. 11. – 25. 11.",
-   "note": null,
-   "brand": "Krušovice"
   },
   {
    "name": "Radegast Rázná 10 6pack",
@@ -1367,16 +1311,16 @@
    "brand": "Staropramen"
   },
   {
-   "name": "Velkopopovický Kozel 10 0,5 l plech, světlé výčepní",
+   "name": "Velkopopovický Kozel 10 0,5 l plech",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Tesco",
    "chain": "Tesco",
    "price": 16.9,
    "price_per_l": 33.8,
-   "valid_from": "2026-11-25",
-   "valid_to": "2026-12-08",
-   "validity_text": "25. 11. – 8. 12.",
+   "valid_from": null,
+   "valid_to": null,
+   "validity_text": null,
    "note": "s Clubcard; původně 24,90 Kč; jen hypermarkety",
    "brand": "Kozel"
   },
@@ -1488,7 +1432,7 @@
    "price_per_l": 33.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": "plech",
    "brand": "Staropramen"
   },
@@ -1563,16 +1507,16 @@
    "brand": "Birell"
   },
   {
-   "name": "Radegast Rázná 10 0,5 l plech, světlé výčepní",
+   "name": "Radegast Rázná 10 0,5 l plech",
    "volume": "0,5 l",
    "volume_l": 0.5,
    "shop": "Tesco",
    "chain": "Tesco",
    "price": 17.9,
    "price_per_l": 35.8,
-   "valid_from": "2026-11-25",
-   "valid_to": "2026-12-08",
-   "validity_text": "25. 11. – 8. 12.",
+   "valid_from": null,
+   "valid_to": null,
+   "validity_text": null,
    "note": "s Clubcard; původně 25,90 Kč; jen hypermarkety",
    "brand": "Radegast"
   },
@@ -1810,7 +1754,7 @@
    "price_per_l": 39.8,
    "valid_from": null,
    "valid_to": "2026-12-01",
-   "validity_text": "platí do úterý 1. 12.",
+   "validity_text": "do úterý 1. 12.",
    "note": null,
    "brand": "Gambrinus"
   },
@@ -1824,7 +1768,7 @@
    "price_per_l": 39.8,
    "valid_from": null,
    "valid_to": "2026-12-31",
-   "validity_text": "platí do čtvrtka 31. 12.",
+   "validity_text": "do čtvrtka 31. 12.",
    "note": "plech",
    "brand": "Kozel"
   },
@@ -1868,20 +1812,6 @@
    "valid_to": "2027-01-03",
    "validity_text": "11. 11. – 3. 1.",
    "note": "původně 30,90 Kč; jen supermarkety",
-   "brand": "Radegast"
-  },
-  {
-   "name": "RADEGAST Ryze hořká 12",
-   "volume": "8 x 500 ml",
-   "volume_l": null,
-   "shop": "Lidl",
-   "chain": "Lidl",
-   "price": 174.9,
-   "price_per_l": 43.73,
-   "valid_from": "2026-11-23",
-   "valid_to": "2026-11-25",
-   "validity_text": "23. 11. – 25. 11.",
-   "note": null,
    "brand": "Radegast"
   },
   {
@@ -2048,7 +1978,7 @@
    "price_per_l": 49.8,
    "valid_from": null,
    "valid_to": "2026-12-31",
-   "validity_text": "platí do čtvrtka 31. 12.",
+   "validity_text": "do čtvrtka 31. 12.",
    "note": "vybrané druhy, plech",
    "brand": null
   },
@@ -2398,7 +2328,7 @@
    "price_per_l": 74.75,
    "valid_from": null,
    "valid_to": "2026-12-31",
-   "validity_text": "platí do čtvrtka 31. 12.",
+   "validity_text": "do čtvrtka 31. 12.",
    "note": "+ krýgl, +24 Kč záloha na láhve",
    "brand": "Pilsner Urquell"
   },
@@ -2776,7 +2706,7 @@
    "price_per_l": 229.0,
    "valid_from": null,
    "valid_to": "2026-12-31",
-   "validity_text": "platí do čtvrtka 31. 12.",
+   "validity_text": "do čtvrtka 31. 12.",
    "note": "limitovaná edice",
    "brand": "Pilsner Urquell"
   },
@@ -2792,34 +2722,6 @@
    "valid_to": "2026-12-26",
    "validity_text": "25. 11. – 26. 12.",
    "note": null,
-   "brand": "Pilsner Urquell"
-  },
-  {
-   "name": "Pilsner Urquell 1 l, dárkové balení",
-   "volume": "1 l",
-   "volume_l": 1.0,
-   "shop": "Lidl",
-   "chain": "Lidl",
-   "price": 229.9,
-   "price_per_l": 229.9,
-   "valid_from": "2026-11-23",
-   "valid_to": "2026-11-25",
-   "validity_text": "23. 11. – 25. 11.",
-   "note": "dárkové balení",
-   "brand": "Pilsner Urquell"
-  },
-  {
-   "name": "Pilsner Urquell",
-   "volume": "1 l",
-   "volume_l": 1.0,
-   "shop": "Lidl",
-   "chain": "Lidl",
-   "price": 229.9,
-   "price_per_l": 229.9,
-   "valid_from": "2026-11-23",
-   "valid_to": "2026-11-25",
-   "validity_text": "23. 11. – 25. 11.",
-   "note": "dárkové balení",
    "brand": "Pilsner Urquell"
   },
   {
@@ -2874,7 +2776,7 @@
    "price_per_l": 299.8,
    "valid_from": null,
    "valid_to": "2026-12-08",
-   "validity_text": "platí do úterý 8. 12.",
+   "validity_text": "do úterý 8. 12.",
    "note": "+ krýgl, +18 Kč záloha na láhve, do vyprodání zásob",
    "brand": "Zubr"
   },

@@ -5,17 +5,17 @@
   "old_price": null,
   "volume": "0,5 l",
   "price_per_l": 39.8,
-  "note": "Záloha na láhev 3 Kč",
+  "note": null,
   "valid_from": "2026-11-25",
   "valid_to": "2026-12-01"
  },
  {
-  "name": "Staropramen Cool",
+  "name": "Staropramen Cool nealkoholické pivo",
   "price": 15.9,
   "old_price": 23.9,
   "volume": "0,5 l",
   "price_per_l": 31.8,
-  "note": "s Clubcard; nealkoholické pivo, plech, více druhů; běžná cena 23,90 Kč, 1 l bez Clubcard = 47,80 Kč",
+  "note": "s Clubcard",
   "valid_from": "2026-11-25",
   "valid_to": "2026-12-08"
  },
@@ -25,7 +25,7 @@
   "old_price": 17.9,
   "volume": "0,5 l",
   "price_per_l": 23.8,
-  "note": "Clubcard cena; záloha na láhev 3 Kč; bez Clubcard 1 l = 35,80 Kč",
+  "note": "s Clubcard",
   "valid_from": "2026-11-25",
   "valid_to": "2026-12-08"
  },
@@ -35,7 +35,7 @@
   "old_price": null,
   "volume": "0,5 l",
   "price_per_l": 25.8,
-  "note": "Super cena, cena pro všechny; záloha na láhev 3 Kč",
+  "note": null,
   "valid_from": "2026-11-25",
   "valid_to": "2026-12-01"
  },
@@ -45,17 +45,17 @@
   "old_price": 29.9,
   "volume": "0,5 l",
   "price_per_l": 41.8,
-  "note": "Clubcard cena",
+  "note": "s Clubcard",
   "valid_from": null,
   "valid_to": null
  },
  {
-  "name": "Krušovice Originál 10",
+  "name": "Krušovice Original 10",
   "price": 13.9,
   "old_price": 21.9,
   "volume": "0,5 l",
   "price_per_l": 27.8,
-  "note": "Clubcard cena",
+  "note": "s Clubcard",
   "valid_from": "2026-11-18",
   "valid_to": "2026-12-01"
  },
@@ -65,7 +65,7 @@
   "old_price": 25.9,
   "volume": "0,5 l",
   "price_per_l": 35.8,
-  "note": "Clubcard cena",
+  "note": "s Clubcard",
   "valid_from": null,
   "valid_to": null
  },
@@ -75,7 +75,7 @@
   "old_price": 26.9,
   "volume": "0,5 l",
   "price_per_l": 33.8,
-  "note": "Clubcard cena",
+  "note": "s Clubcard",
   "valid_from": "2026-11-18",
   "valid_to": "2026-12-01"
  },
@@ -95,7 +95,7 @@
   "old_price": 22.9,
   "volume": "0,5 l",
   "price_per_l": 31.8,
-  "note": "Clubcard cena; záloha na láhev 3 Kč",
+  "note": "s Clubcard",
   "valid_from": null,
   "valid_to": null
  }
