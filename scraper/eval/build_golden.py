@@ -16,6 +16,7 @@ Volá Claude API (silnější model, jedno volání na stránku) – stojí pen�
 
 import argparse
 import json
+import os
 import sys
 from datetime import date
 from pathlib import Path
@@ -25,7 +26,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from chains import leaflet_ai  # noqa: E402
 from chains.leaflet_graph import STRONG_MODEL  # noqa: E402
 
-GOLDEN = Path(__file__).resolve().parent / "golden"
+# GOLDEN_DIR: složka se zlatou sadou (v CI checkout soukromého repa)
+GOLDEN = Path(os.environ.get("GOLDEN_DIR")
+              or Path(__file__).resolve().parent / "golden")
 EMPTY_PAGES = 3
 
 
@@ -63,6 +66,11 @@ def main():
         empty = 0
         pages = leaflet_ai.render_pdf(pdf)[:args.max_pages]
         for n, jpeg in enumerate(pages, 1):
+            page_id = f"{chain.lower()}-{leaflet_id}-p{n:02d}"
+            existing = GOLDEN / f"{page_id}.json"
+            if existing.exists() and json.loads(
+                    existing.read_text(encoding="utf-8")).get("verified"):
+                continue  # ověřenou stránku nepřepisovat (a neplatit za ni)
             offers, stop, _ = leaflet_ai.request_offers(
                 client, leaflet_ai.page_messages(jpeg, chain, year),
                 model=STRONG_MODEL, effort="medium")
@@ -73,7 +81,6 @@ def main():
                 if empty >= EMPTY_PAGES:
                     continue
                 empty += 1
-            page_id = f"{chain.lower()}-{leaflet_id}-p{n:02d}"
             (GOLDEN / f"{page_id}.jpg").write_bytes(jpeg)
             label = {"chain": chain, "year": year, "image": f"{page_id}.jpg",
                      "verified": False, "offers": offers}

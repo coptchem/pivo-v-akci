@@ -95,8 +95,13 @@ Stránka bez problémů stojí jedno volání jako dřív, nejhorší případ j
 
 ### Evaluace
 
-Zlatá sada jsou ručně ověřené stránky letáků v `scraper/eval/golden/`
-(obrázky jen lokálně, popisky `.json` v repozitáři).
+Zlatá sada jsou ručně ověřené stránky letáků (obrázek + `.json` s nabídkami
+a `"verified": true`). Obrázky letáků nejsou ve veřejném repozitáři: sada
+žije v soukromém repozitáři (`GOLDEN_REPO` + `GOLDEN_TOKEN`) a workflow
+**Evaluace letáků** (`.github/workflows/eval.yml`, ruční spuštění) v režimu
+`draft` do něj uloží návrh z aktuálního letáku Albertu, v režimu `eval`
+vypíše srovnání legacy a graph do Job summary. Lokálně se složka zadává
+proměnnou `GOLDEN_DIR` (výchozí `scraper/eval/golden/`).
 
 ```bash
 pip install -r scraper/requirements-dev.txt

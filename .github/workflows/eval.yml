@@ -1,0 +1,103 @@
+name: Evaluace letáků
+
+# Ruční spuštění (Actions -> Evaluace letáků -> Run workflow, větev s pipeline).
+#  - draft: návrh zlaté sady z aktuálního letáku Albertu (silnější model)
+#  - eval:  legacy vs. graph na ověřených stránkách, výsledek v Job summary
+#
+# Zlatá sada žije v soukromém repozitáři (proměnná GOLDEN_REPO, např.
+# coptchem/pivo-v-akci-golden, a secret GOLDEN_TOKEN: fine-grained token
+# jen pro ten repozitář s Contents: read and write). Bez nich draft jen
+# nahraje artefakt a eval nemá data.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "draft = návrh zlaté sady, eval = měření"
+        type: choice
+        options: [eval, draft]
+        default: eval
+      max_pages:
+        description: "draft: nejvýš stránek z letáku"
+        default: "30"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eval
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      GOLDEN_DIR: ${{ github.workspace }}/golden
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Zlatá sada ze soukromého repozitáře
+        if: vars.GOLDEN_REPO != ''
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ vars.GOLDEN_REPO }}
+          token: ${{ secrets.GOLDEN_TOKEN }}
+          path: golden
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r scraper/requirements.txt
+
+      - name: Návrh zlaté sady
+        if: inputs.mode == 'draft'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
+          MAX_PAGES: ${{ inputs.max_pages }}
+        run: |
+          mkdir -p "$GOLDEN_DIR"
+          python scraper/eval/build_golden.py --albert --max-pages "$MAX_PAGES"
+
+      - name: Uložení návrhu do soukromého repozitáře
+        if: inputs.mode == 'draft' && vars.GOLDEN_REPO != ''
+        working-directory: golden
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Žádné nové stránky."
+          else
+            git commit -m "Návrh zlaté sady $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Návrh jako artefakt (bez soukromého repozitáře)
+        if: inputs.mode == 'draft' && vars.GOLDEN_REPO == ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: golden-draft
+          path: golden/
+          retention-days: 7
+
+      - name: Evaluace
+        if: inputs.mode == 'eval'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scraper/eval/run_eval.py --out eval-results.json | tee eval.txt
+          {
+            echo "## Evaluace vytěžování letáků"
+            echo '```'
+            cat eval.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Výsledky jako artefakt
+        if: inputs.mode == 'eval'
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: eval-results.json

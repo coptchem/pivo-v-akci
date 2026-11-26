@@ -13,6 +13,7 @@ a tokeny podle modelu. Volá Claude API – stojí peníze.
 
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -23,7 +24,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from chains import leaflet_ai, leaflet_graph  # noqa: E402
 from metrics import compare, summarize  # noqa: E402
 
-GOLDEN = Path(__file__).resolve().parent / "golden"
+# GOLDEN_DIR: složka se zlatou sadou (v CI checkout soukromého repa)
+GOLDEN = Path(os.environ.get("GOLDEN_DIR")
+              or Path(__file__).resolve().parent / "golden")
 
 
 class CountingClient:
