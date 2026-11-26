@@ -51,6 +51,18 @@ def same_offer(expected, predicted):
         and _volume(expected) == _volume(predicted)
 
 
+def _shown_per_litre(o):
+    """Cena za litr, jak ji ukáže web: z letáku, jinak dopočtená z objemu
+    (stejně jako make_item)."""
+    per_l = o.get("price_per_l")
+    if isinstance(per_l, (int, float)):
+        return per_l
+    vol = _volume(o)
+    price = o.get("price")
+    return round(price / vol, 2) if vol and isinstance(price, (int, float)) \
+        else None
+
+
 def _close(a, b, rel=0.0, abs_=0.01):
     if a is None or b is None:
         return a is None and b is None
@@ -71,8 +83,8 @@ def compare(expected, predicted):
     for e, p in matched:
         fields["volume"] += _close(_volume(e), _volume(p), abs_=0.001)
         fields["old_price"] += _close(e.get("old_price"), p.get("old_price"))
-        fields["price_per_l"] += _close(e.get("price_per_l"),
-                                        p.get("price_per_l"), rel=0.02)
+        fields["price_per_l"] += _close(_shown_per_litre(e),
+                                        _shown_per_litre(p), rel=0.02)
     return {
         "expected": len(expected),
         "predicted": len(predicted),
