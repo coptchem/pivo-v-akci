@@ -120,41 +120,74 @@ def _clean_offer(raw):
     return raw
 
 
-def ask_page(client, jpeg_bytes, chain, year):
-    """Vrátí seznam nabídek piva z jedné stránky letáku."""
+def page_messages(jpeg_bytes, chain, year):
+    """První zpráva konverzace: obrázek stránky + zadání."""
+    return [{
+        "role": "user",
+        "content": [
+            {"type": "image", "source": {
+                "type": "base64", "media_type": "image/jpeg",
+                "data": base64.standard_b64encode(jpeg_bytes).decode()}},
+            {"type": "text", "text": PROMPT.format(chain=chain, year=year)},
+        ],
+    }]
+
+
+def request_offers(client, messages, model=MODEL, effort="low"):
+    """Jedno volání modelu. Vrací (nabídky | None, stop_reason, usage).
+
+    Nabídky jsou surové (bez _clean_offer); None znamená, že odpověď nešla
+    použít (refusal, max_tokens, nevalidní JSON).
+    """
     response = client.messages.create(
-        model=MODEL,
+        model=model,
         max_tokens=8000,   # rezerva i pro (krátké) přemýšlení modelu
         output_config={
-            "effort": "low",
+            "effort": effort,
             "format": {"type": "json_schema", "schema": OUTPUT_SCHEMA},
         },
-        messages=[{
-            "role": "user",
-            "content": [
-                {"type": "image", "source": {
-                    "type": "base64", "media_type": "image/jpeg",
-                    "data": base64.standard_b64encode(jpeg_bytes).decode()}},
-                {"type": "text",
-                 "text": PROMPT.format(chain=chain, year=year)},
-            ],
-        }],
+        messages=messages,
     )
+    usage = {
+        "model": model,
+        "input_tokens": getattr(response.usage, "input_tokens", 0),
+        "output_tokens": getattr(response.usage, "output_tokens", 0),
+    }
     if response.stop_reason != "end_turn":
-        # refusal / max_tokens – stránku přeskočíme, ostatní pokračují
-        print(f"{chain}: stránka přeskočena "
-              f"(stop_reason={response.stop_reason})")
-        return []
+        return None, response.stop_reason, usage
     text = next((b.text for b in response.content if b.type == "text"), "")
     try:
         offers = json.loads(text).get("offers", [])
     except ValueError:
+        return None, "invalid_json", usage
+    return [o for o in offers if isinstance(o, dict)], response.stop_reason, usage
+
+
+def ask_page(client, jpeg_bytes, chain, year):
+    """Vrátí seznam nabídek piva z jedné stránky letáku (jedno volání)."""
+    offers, stop, _ = request_offers(
+        client, page_messages(jpeg_bytes, chain, year))
+    if offers is None:
+        # refusal / max_tokens – stránku přeskočíme, ostatní pokračují
+        print(f"{chain}: stránka přeskočena (stop_reason={stop})")
         return []
     return [o for o in map(_clean_offer, offers) if o]
 
 
 def extract_pages(client, pages, chain, year):
-    """Projde stránky (JPEG bytes nebo funkce vracející JPEG) souběžně."""
+    """Projde stránky (JPEG bytes nebo funkce vracející JPEG) souběžně.
+
+    Výchozí je LangGraph pipeline s kontrolou a opravami
+    (chains/leaflet_graph); LEAFLET_PIPELINE=legacy vrátí jedno volání
+    na stránku bez kontroly.
+    """
+    if os.environ.get("LEAFLET_PIPELINE", "graph") != "legacy":
+        from chains import leaflet_graph
+        return leaflet_graph.extract_pages(client, pages, chain, year)
+    return extract_pages_legacy(client, pages, chain, year)
+
+
+def extract_pages_legacy(client, pages, chain, year):
     def one(page):
         data = page() if callable(page) else page
         return ask_page(client, data, chain, year)
