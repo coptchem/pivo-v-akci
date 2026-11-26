@@ -15,6 +15,20 @@ def test_same_offer_tolerates_name_variants():
     assert not same_offer(E, {"name": "Kozel 11", "price": 24.9})
 
 
+def test_same_offer_name_contained():
+    e = {"name": "Cecilia 11 bezlepkový ležák", "price": 18.9}
+    assert same_offer(e, {"name": "Cecilia 11", "price": 18.9})
+    assert not same_offer(e, {"name": "Ce", "price": 18.9})
+
+
+def test_same_offer_joint_offer():
+    e = {"name": "Mustang světlý ležák / Černá Barbora speciální tmavé pivo",
+         "price": 16.9}
+    assert same_offer(e, {"name": "Mustang", "price": 16.9})
+    assert same_offer(e, {"name": "Mustang / Černá Barbora", "price": 16.9})
+    assert not same_offer(e, {"name": "Svijany", "price": 16.9})
+
+
 def test_compare_counts_and_fields():
     predicted = [
         dict(E, old_price=None),                       # spárováno, pův. cena chybí

@@ -41,12 +41,14 @@ if __package__ in (None, ""):  # spuštění jako skript (--mermaid)
     sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from chains import leaflet_ai  # noqa: E402
+from chains.common import NOT_BEER_RE  # noqa: E402
 from utils import parse_volume_l  # noqa: E402
 
 BASE_MODEL = leaflet_ai.MODEL
 STRONG_MODEL = os.environ.get("LEAFLET_STRONG_MODEL", "claude-sonnet-5-5")
 MAX_ATTEMPTS = 2          # pokusy základním modelem (první + 1 oprava)
 PER_LITRE_TOLERANCE = 0.12  # relativní odchylka ceny za litr od price/objem
+MAX_BEER_PER_LITRE = 200    # Kč/l; výš je to skoro jistě jiné zboží
 
 _ISO_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
@@ -73,11 +75,21 @@ def check_offer(raw, year):
         issues.append(("old_price", f"„{name}“: původní cena {old} Kč není "
                                     f"vyšší než akční cena {price} Kč"))
 
+    if NOT_BEER_RE.search(name):
+        issues.append(("not_beer", f"„{name}“: podle názvu to nevypadá na "
+                                   f"pivo (cider, sklenice, potravina…)"))
+
     volume = raw.get("volume")
     volume_l = parse_volume_l(volume) if isinstance(volume, str) else None
     if volume_l is not None and not 0.2 <= volume_l <= 30:
         issues.append(("volume", f"„{name}“: podezřelý objem {volume!r}"))
         volume_l = None
+    if volume_l and price / volume_l > MAX_BEER_PER_LITRE:
+        issues.append(("not_beer",
+                       f"„{name}“: {price} Kč za {volume} vychází na "
+                       f"{price / volume_l:.0f} Kč/l, což je u piva "
+                       f"neobvyklé. Ověř, že jde o pivo (ne destilát, víno "
+                       f"nebo dárkovou sadu jiného zboží); pokud ne, vynech ji"))
 
     per_l = raw.get("price_per_l")
     if isinstance(per_l, (int, float)) and volume_l:
@@ -104,7 +116,7 @@ def check_offer(raw, year):
 
 def repair_offer(raw, codes):
     """Deterministická oprava; None = nabídku zahodit."""
-    if "price" in codes:
+    if "price" in codes or "not_beer" in codes:
         return None
     fixed = dict(raw)
     if "old_price" in codes:

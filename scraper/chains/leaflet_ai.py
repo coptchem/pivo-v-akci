@@ -36,6 +36,8 @@ PROMPT = (
     "druh piva, běžnou cenu ani cenu za litr do note nepiš, jinak null; "
     "valid_from / valid_to = platnost akce ve formátu YYYY-MM-DD, "
     "pokud je na stránce uvedena (rok {year}). Co na stránce není, dej null. "
+    "Pokud jedna cenovka platí pro více druhů piva (např. „Mustang / Černá "
+    "Barbora“), vrať ji jako JEDNU nabídku a názvy spoj lomítkem. "
     "Pokud na stránce žádné pivo není, vrať prázdný seznam offers."
 )
 

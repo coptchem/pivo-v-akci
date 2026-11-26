@@ -80,12 +80,13 @@ graph TD;
 - **extract**: Claude Haiku 5.5 vrátí nabídky jako strukturovaný JSON.
 - **validate**: deterministická pravidla bez volání modelu: rozsah ceny,
   cena za litr odpovídá ceně a objemu (tolerance 12 %), původní cena je
-  vyšší než akční, platnost od ≤ do.
+  vyšší než akční, platnost od ≤ do, a jestli jde o pivo (název bez
+  cideru, sklenic apod., cena nejvýš 200 Kč/l).
 - **retry**: model dostane svou předchozí odpověď a seznam problémů
   a odpoví znovu.
 - **escalate**: jeden pokus silnějším modelem (`LEAFLET_STRONG_MODEL`,
   výchozí `claude-sonnet-5-5`, prázdná hodnota eskalaci vypne).
-- **repair**: co se neopravilo, opraví pravidla (nesmyslná cena → nabídka
+- **repair**: co se neopravilo, opraví pravidla (nesmyslná cena nebo ne-pivo → nabídka
   zahozena, nesedící cena za litr → dopočítá se z objemu) a zapíše se do
   fronty k ruční kontrole `data/review/<datum>.json`.
 

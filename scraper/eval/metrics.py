@@ -11,15 +11,26 @@ NAME_SIMILARITY = 0.6
 
 
 def _norm_name(name):
+    """Malá písmena bez objemů a interpunkce; lomítko mezi druhy zůstane
+    jako dvojitá mezera (viz same_offer)."""
     t = str(name or "").lower()
     t = re.sub(r"\d+\s*[x×]\s*\d+(?:[.,]\d+)?\s*l\b", " ", t)
     t = re.sub(r"\d+(?:[.,]\d+)?\s*l\b", " ", t)
-    return re.sub(r"[^\w]+", " ", t).strip()
+    parts = [re.sub(r"\s+", " ", re.sub(r"[^\w]+", " ", p)).strip()
+             for p in t.split("/")]
+    return "  ".join(p for p in parts if p)
 
 
 def _volume(o):
     v = o.get("volume")
     return parse_volume_l(v) if isinstance(v, str) else None
+
+
+def _contains(a, b):
+    """Jeden název je začátkem nebo částí druhého po celých slovech
+    („cecilia 11“ v „cecilia 11 bezlepkový ležák“)."""
+    short, long_ = sorted((a, b), key=len)
+    return len(short) >= 3 and f" {short} " in f" {long_} "
 
 
 def same_offer(expected, predicted):
@@ -30,6 +41,10 @@ def same_offer(expected, predicted):
         return False
     a, b = _norm_name(expected["name"]), _norm_name(predicted["name"])
     if SequenceMatcher(None, a, b).ratio() >= NAME_SIMILARITY:
+        return True
+    # název obsažený v druhém, i po částech společné nabídky více druhů
+    # („mustang / černá barbora“ proti „mustang“)
+    if any(_contains(pa, pb) for pa in a.split("  ") for pb in b.split("  ")):
         return True
     brand = brand_of(expected["name"])
     return brand is not None and brand == brand_of(predicted["name"]) \

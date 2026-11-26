@@ -68,18 +68,26 @@ def load_golden(include_unverified):
     return labels
 
 
-def evaluate(name, labels, base_client):
-    client = CountingClient(base_client)
-    rows, started = [], time.monotonic()
+def score(name, labels, predictions):
+    """Metriky z uložených odpovědí: {page_id: [nabídky]}."""
+    rows = []
     for page_id, label in labels:
-        jpeg = (GOLDEN / label["image"]).read_bytes()
-        predicted = PIPELINES[name](client, jpeg, label["chain"], label["year"])
-        row = compare(label["offers"], predicted)
+        row = compare(label["offers"], predictions.get(page_id, []))
         rows.append(row)
         if row["missed"] or row["extra"]:
             print(f"  [{name}] {page_id}: chybí {row['missed']}, "
                   f"navíc {row['extra']}")
-    result = summarize(rows)
+    return summarize(rows)
+
+
+def evaluate(name, labels, base_client):
+    client = CountingClient(base_client)
+    predictions, started = {}, time.monotonic()
+    for page_id, label in labels:
+        jpeg = (GOLDEN / label["image"]).read_bytes()
+        predictions[page_id] = PIPELINES[name](
+            client, jpeg, label["chain"], label["year"])
+    result = score(name, labels, predictions)
     result["seconds"] = round(time.monotonic() - started, 1)
     per_model = {}
     for c in client.calls:
@@ -89,7 +97,22 @@ def evaluate(name, labels, base_client):
         m["input_tokens"] += c["input_tokens"]
         m["output_tokens"] += c["output_tokens"]
     result["usage"] = per_model
+    result["predictions"] = predictions
     return result
+
+
+def print_table(results, pages):
+    print(f"\nStránek: {pages}")
+    print(f"{'pipeline':<8} {'precision':>9} {'recall':>7} {'objem':>6} "
+          f"{'pův.cena':>8} {'Kč/l':>6} {'čas s':>6}  volání a tokeny")
+    for n, r in results.items():
+        fa = r["field_accuracy"]
+        usage = "; ".join(f"{m}: {u['calls']}× {u['input_tokens']}/"
+                          f"{u['output_tokens']}"
+                          for m, u in r.get("usage", {}).items())
+        print(f"{n:<8} {r['precision']:>9.1%} {r['recall']:>7.1%} "
+              f"{fa['volume']:>6.0%} {fa['old_price']:>8.0%} "
+              f"{fa['price_per_l']:>6.0%} {r.get('seconds', '-'):>6}  {usage}")
 
 
 def main():
@@ -98,28 +121,31 @@ def main():
                     default="both")
     ap.add_argument("--all", action="store_true",
                     help="použít i neověřené stránky (jen pro ladění)")
-    ap.add_argument("--out", type=Path, help="uložit výsledky jako JSON")
+    ap.add_argument("--out", type=Path,
+                    help="uložit výsledky včetně odpovědí modelu jako JSON")
+    ap.add_argument("--rescore", type=Path,
+                    help="přepočítat metriky z dřívějšího --out bez volání API")
     args = ap.parse_args()
 
     labels = load_golden(args.all)
     if not labels:
         sys.exit(f"V {GOLDEN} nejsou žádné ověřené stránky "
                  f"(viz build_golden.py).")
+
+    if args.rescore:
+        saved = json.loads(args.rescore.read_text(encoding="utf-8"))
+        results = {}
+        for n, r in saved.items():
+            results[n] = score(n, labels, r["predictions"])
+            results[n].update(usage=r.get("usage", {}),
+                              seconds=r.get("seconds"))
+        print_table(results, len(labels))
+        return
+
     names = ["legacy", "graph"] if args.pipeline == "both" else [args.pipeline]
     base_client = leaflet_ai.make_client()
-
     results = {n: evaluate(n, labels, base_client) for n in names}
-
-    print(f"\nStránek: {len(labels)}")
-    print(f"{'pipeline':<8} {'precision':>9} {'recall':>7} {'objem':>6} "
-          f"{'pův.cena':>8} {'Kč/l':>6} {'čas s':>6}  volání a tokeny")
-    for n, r in results.items():
-        fa = r["field_accuracy"]
-        usage = "; ".join(f"{m}: {u['calls']}× {u['input_tokens']}/"
-                          f"{u['output_tokens']}" for m, u in r["usage"].items())
-        print(f"{n:<8} {r['precision']:>9.1%} {r['recall']:>7.1%} "
-              f"{fa['volume']:>6.0%} {fa['old_price']:>8.0%} "
-              f"{fa['price_per_l']:>6.0%} {r['seconds']:>6}  {usage}")
+    print_table(results, len(labels))
     if args.out:
         args.out.write_text(json.dumps(results, ensure_ascii=False, indent=1),
                             encoding="utf-8")

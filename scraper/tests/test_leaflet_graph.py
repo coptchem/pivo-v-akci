@@ -44,7 +44,42 @@ def test_impossible_price_short_circuits():
     assert [c for c, _ in lg.check_offer(offer(price=0), 2026)] == ["price"]
 
 
+HEFFRON = dict(name="Heffron Degustační sada", price=349.0, old_price=None,
+               volume="3× 0,2 l", price_per_l=581.67)
+
+
+def test_expensive_per_litre_is_not_beer():
+    codes = [c for c, _ in lg.check_offer(offer(**HEFFRON), 2026)]
+    assert codes == ["not_beer"]
+
+
+def test_not_beer_name_is_flagged():
+    codes = [c for c, _ in lg.check_offer(offer(name="Kingswood cider"), 2026)]
+    assert codes == ["not_beer"]
+
+
+def test_premium_beer_is_not_flagged():
+    o = offer(name="Bernard dárkové balení 4× 0,5 l", price=219.9,
+              old_price=259.9, volume="4× 0,5 l", price_per_l=109.95)
+    assert lg.check_offer(o, 2026) == []
+
+
 # ------------------------------------------------------------ graf
+
+def test_not_beer_dropped_after_retry(fake_client):
+    client = fake_client([[offer(), offer(**HEFFRON)], [offer()]])
+    state = run(client)
+    assert state["attempts"] == 2
+    assert state["offers"] == [offer()]
+    assert "neobvyklé" in client.requests[1]["messages"][-1]["content"]
+
+
+def test_not_beer_dropped_by_repair(fake_client):
+    bad = [offer(), offer(**HEFFRON)]
+    state = run(fake_client([bad, bad, bad]))
+    assert state["offers"] == [offer()]
+    assert state["review"][0]["action"] == "zahozeno"
+
 
 def test_clean_page_needs_one_call(fake_client):
     client = fake_client([[offer()]])
