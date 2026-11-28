@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "count": 222,
  "sources": {
   "Kaufland": {
@@ -9,7 +9,7 @@
   "Lidl": {
    "source": "záloha",
    "count": 19,
-   "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x7ed948254680>"
+   "error": "UnidentifiedImageError: cannot identify image file <_io.BytesIO object at 0x7ad87dd1eac0>"
   },
   "Billa": {
    "source": "přímo",
@@ -75,7 +75,7 @@
    "price_per_l": 19.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "+3 Kč záloha na láhev",
    "brand": "Argus"
   },
@@ -215,7 +215,7 @@
    "price_per_l": 21.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "+3 Kč záloha na láhev",
    "brand": "Klášter"
   },
@@ -257,7 +257,7 @@
    "price_per_l": 21.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "+3 Kč záloha na láhev, do vyprodání zásob",
    "brand": "Excelent"
   },
@@ -313,7 +313,7 @@
    "price_per_l": 23.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "+3 Kč záloha na láhev",
    "brand": null
   },
@@ -551,7 +551,7 @@
    "price_per_l": 25.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "+3 Kč záloha na láhev",
    "brand": "Zlatý Bažant"
   },
@@ -565,7 +565,7 @@
    "price_per_l": 25.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "plech",
    "brand": "Argus"
   },
@@ -1363,7 +1363,7 @@
    "price_per_l": 33.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "+3 Kč záloha na láhev",
    "brand": "Radegast"
   },
@@ -1713,7 +1713,7 @@
    "price_per_l": 37.8,
    "valid_from": null,
    "valid_to": "2026-11-29",
-   "validity_text": "do neděle 29. 11.",
+   "validity_text": "zítra končí",
    "note": "plech",
    "brand": "Budvar"
   },
